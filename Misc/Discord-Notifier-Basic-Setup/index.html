@@ -1260,8 +1260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../How-to-provide-a-docker-compose-when-you-need-help-on-Discord/" class="md-nav__link">
-      How to provide a docker compose
+    <a href="../How-to-setup-Torguard-for-port-forwarding/" class="md-nav__link">
+      Setup TorGuard for port forwarding
     </a>
   </li>
 
@@ -1272,8 +1272,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../How-to-setup-Torguard-for-port-forwarding/" class="md-nav__link">
-      Setup TorGuard for port forwarding
+    <a href="../how-to-provide-a-docker-compose/" class="md-nav__link">
+      How to provide a docker compose
     </a>
   </li>
 
@@ -1564,7 +1564,7 @@
 <p>After you've added them to your Discord Server it's time to get the ID's from your emoji's, to do this go in to one of your channels and type:</p>
 <div class="highlight"><pre><span></span><code><span class="se">\:</span>emoji_name:
 </code></pre></div>
-<details class="summary"><summary>Example</summary><p><img alt="image-20201108092738752" src="../images/image-20201108092738752.png" /></p>
+<details class="example"><summary>Example</summary><p><img alt="image-20201108092738752" src="../images/image-20201108092738752.png" /></p>
 <p>What results in to.</p>
 <p><img alt="image-20201108092827192" src="../images/image-20201108092827192.png" /></p>
 <p>So your ID would be <code>:grab:706535455876710461</code>.</p>
@@ -1578,7 +1578,7 @@
 <li>Paste here the the emoji ID.</li>
 <li>The actual indexer name you're using in Sonarr/Radarr.</li>
 </ol>
-<details class="summary"><summary>Example</summary><p><img alt="image-20201108094627415" src="../images/image-20201108094627415.png" /></p>
+<details class="example"><summary>Example</summary><p><img alt="image-20201108094627415" src="../images/image-20201108094627415.png" /></p>
 <p>What will result in to.</p>
 <p><img alt="image-20201108094834791" src="../images/image-20201108094834791.png" /></p>
 <p>If you use a different name in Sonarr and Radarr just add them with a comma <code>BeyondHD - Jackett,BHD</code>.</p>
@@ -1595,7 +1595,7 @@
 <h3 id="radarr-readarr-and-lidarr">Radarr, Readarr and Lidarr<a class="headerlink" href="#radarr-readarr-and-lidarr" title="Permanent link">&para;</a></h3>
 <p>Radarr, Readarr and Lidarr supports Discord Notifier native so that's a easy one to add.</p>
 <p><code>Settings</code> =&gt; <code>Connect</code> =&gt; click on <img alt="image-20201108174654550.png" src="../images/image-20201108174654550.png" /> and select <code>Discord Notifier</code> add your API key and you're done.</p>
-<details class="summary"><summary>Radarr Example</summary><p>In Radarr go to <code>Settings</code> =&gt; <code>Connect</code> =&gt; Click on <img alt="image-20201108174654550" src="../images/image-20201108174654550.png" /> and select <code>DiscordNotifier.com</code>.</p>
+<details class="example"><summary>Radarr Example</summary><p>In Radarr go to <code>Settings</code> =&gt; <code>Connect</code> =&gt; Click on <img alt="image-20201108174654550" src="../images/image-20201108174654550.png" /> and select <code>DiscordNotifier.com</code>.</p>
 <p><img alt="image-20201108154540683" src="../images/image-20201108154540683.png" /></p>
 <p>Then add the following info.</p>
 <p><img alt="image-20201108172017406" src="../images/image-20201108172017406.png" /></p>
@@ -1617,7 +1617,7 @@ that's why we're going to use the webhook method.</p>
 <p><strong>Enable:</strong> <code>On Grab</code>, <code>On Import</code>, <code>On Upgrade</code>, <code>On Health Issue</code> &amp; <code>Include Health Warnings</code>.</p>
 <p><strong>URL:</strong> The URL that you can copy/paste from the integrations page.</p>
 <p>Click <strong>Save</strong></p>
-<details class="summary"><summary>Sonarr Example</summary><p><code>Settings</code> =&gt; <code>Connect</code> &gt; Click on <img alt="image-20201108174654550.png" src="../images/image-20201108174654550.png" /> and select <code>Webhook</code>.</p>
+<details class="example"><summary>Sonarr Example</summary><p><code>Settings</code> =&gt; <code>Connect</code> &gt; Click on <img alt="image-20201108174654550.png" src="../images/image-20201108174654550.png" /> and select <code>Webhook</code>.</p>
 <p><img alt="image-20201108181144356" src="../images/image-20201108181144356.png" /></p>
 <p>Add the following info.</p>
 <p><img alt="image-20201108181509164" src="../images/image-20201108181509164.png" /></p>
@@ -1637,7 +1637,7 @@ that's why we're going to use the webhook method.</p>
 <p>On the top click on <img alt="image-20201108191244845" src="../images/image-20201108191244845.png" /> <code>Edit</code> icon and Enable the notification type.</p>
 <p>Add the JSON URL that you can copy/paste from the integrations page.</p>
 <p>Scroll up and save</p>
-<details class="summary"><summary>Bazarr Example</summary><p><code>Settings</code> =&gt; <code>Notifications</code> =&gt; and select<code>JSON</code></p>
+<details class="example"><summary>Bazarr Example</summary><p><code>Settings</code> =&gt; <code>Notifications</code> =&gt; and select<code>JSON</code></p>
 <p><img alt="image-20201108185518511" src="../images/image-20201108185518511.png" /></p>
 <p>On the top click on <img alt="image-20201108191244845" src="../images/image-20201108191244845.png" /> <code>Edit</code> icon and Enable the notification type.</p>
 <p>Add the following info.</p>
@@ -1655,7 +1655,7 @@ that's why we're going to use the webhook method.</p>
 <p>For Plex we're going to use the Webhook method.</p>
 <p><img alt="image-20201108191708582" src="../images/image-20201108191708582.png" /></p>
 <p><code>Settings</code> =&gt; <code>Webhooks</code> =&gt; click on <code>ADD WEBHOOK</code> and add the URL that you can copy/paste from the integrations page and click on <code>SAVE CHANGES</code></p>
-<details class="summary"><summary>Plex Example</summary><p><code>Settings</code> =&gt; <code>Webhooks</code> =&gt; click on <code>ADD WEBHOOK</code></p>
+<details class="example"><summary>Plex Example</summary><p><code>Settings</code> =&gt; <code>Webhooks</code> =&gt; click on <code>ADD WEBHOOK</code></p>
 <p>On the top right click on the <img alt="image-20201108194808693" src="../images/image-20201108194808693.png" /> <code>Settings</code> icon, and on the left sidebar select <code>Webhooks</code>
 Click on the middle of the screen on <img alt="image-20201108195006697" src="../images/image-20201108195006697.png" /> and add the following info.</p>
 <p><img alt="image-20201108195139199" src="../images/image-20201108195139199.png" /></p>
@@ -1676,7 +1676,7 @@ Click on the middle of the screen on <img alt="image-20201108195006697" src="../
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-08T22:01:18+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-09T23:40:22+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-09</span>
     
   </small>
 </div>
@@ -1714,13 +1714,13 @@ Click on the middle of the screen on <img alt="image-20201108195006697" src="../
           </a>
         
         
-          <a href="../How-to-provide-a-docker-compose-when-you-need-help-on-Discord/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../How-to-setup-Torguard-for-port-forwarding/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                How to provide a docker compose
+                Setup TorGuard for port forwarding
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
