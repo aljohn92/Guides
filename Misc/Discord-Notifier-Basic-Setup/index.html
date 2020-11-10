@@ -1492,7 +1492,7 @@
 </ol>
 <hr />
 <h2 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h2>
-<p>After you logged in you will be redirected to your profile screen where you need to do a few things.</p>
+<p>After you have logged in, you will be redirected to your profile screen.</p>
 <p><img alt="image-20201107184811997" src="../images/image-20201107184811997.png" /></p>
 <ol>
 <li>Select your Country.</li>
@@ -1503,7 +1503,7 @@
 </ol>
 <hr />
 <h2 id="notification-setup">Notification Setup<a class="headerlink" href="#notification-setup" title="Permanent link">&para;</a></h2>
-<p>Here you will be able to setup the following things:</p>
+<p>Here, you can setup the following items:</p>
 <ul>
 <li>Notifications Settings =&gt; Setup which notifications you want to receive from the *arr.</li>
 <li>Discord Settings =&gt; Setup your discord channels and your reactions and invite the bot in to your channel.</li>
@@ -1524,7 +1524,7 @@
 <p><code>#mediabot</code> =&gt; *arr channel - All the <code>*arr</code> notifications you setup in <a href="#notification-settings">Notification Settings</a>.</p>
 <p><code>#error-channel</code> =&gt; Error channel- Health check, network errors, etc.</p>
 <p><code>#plex</code> =&gt; Media channel - Play state and info of Plex.</p>
-<p>After you created the needed channels it's time to add them to the <code>Setup the channels</code></p>
+<p>After you have created your custom channels, then you'll need to add them to <code>Setup the channels</code></p>
 <p>First we need to get the channel ID's from your server/channel</p>
 <p>Open your User Settings -&gt; Appearance -&gt; Enable Developer Mode.</p>
 <p><img alt="image-20201107201431508" src="../images/image-20201107201431508.png" /></p>
@@ -1536,8 +1536,8 @@
 <li>Add the Channel ID for the <code>#mediabot</code> channel.</li>
 <li>Add the Channel ID for the <code>#error-channel</code> channel.</li>
 <li>Add the Channel ID for the <code>#plex</code> channel.</li>
-<li>Use this option if you want to use separate Channels for the notifications.</li>
-<li>Use this option if you want to use separate Channels for the notifications.</li>
+<li>Use this option if you want to use separate *arr channels for the notifications.</li>
+<li>Use this option if you want to use separate *arr channels for the notifications.</li>
 </ol>
 <h3 id="invite-the-bot">Invite the bot<a class="headerlink" href="#invite-the-bot" title="Permanent link">&para;</a></h3>
 <p>It's time to invite the bot in to your Server/Channels by clicking on the following link.</p>
@@ -1568,10 +1568,10 @@
 </ol>
 <p>First we're going to download the emoji's and you can do that in 2 ways.</p>
 <ol>
-<li>One by One - Right click -&gt; save as for these emoji images.</li>
+<li>1 at a time - Right click -&gt; Save As... - for these emoji images to some location on your computer.</li>
 <li>Pack Download - Click <a href="https://discordnotifier.com/setup.php?grab=reactions" target="_blank">here</a> to download a zip of all the current reaction images.</li>
 </ol>
-<p>For this Example we will be using the Pack Download, that you need to unpack to your computer and then add them to your Discord Server</p>
+<p>For this example, we will be using Pack Download.  You'll need download the file and then unpack it somewhere on your computer.  After which, you can then add the emoji's to your Discord Server easily.</p>
 <p>How to add your own Emoji's =&gt; <a href="https://support.discord.com/hc/en-us/articles/360036479811-Custom-Emojis" target="_blank">LINK</a></p>
 <p>After you've added them to your Discord Server it's time to get the ID's from your emoji's, to do this go in to one of your channels and type:</p>
 <div class="highlight"><pre><span></span><code><span class="se">\:</span>emoji_name:
@@ -1605,7 +1605,7 @@
 <p>This is where we add all this to your *arr and Plex.</p>
 <p><img alt="image-20201108153748843" src="../images/image-20201108153748843.png" /></p>
 <h3 id="radarr-readarr-and-lidarr">Radarr, Readarr and Lidarr<a class="headerlink" href="#radarr-readarr-and-lidarr" title="Permanent link">&para;</a></h3>
-<p>Radarr, Readarr and Lidarr supports Discord Notifier native so that's a easy one to add.</p>
+<p>Radarr, Readarr and Lidarr supports Discord Notifier natively so that's an easy one to add.</p>
 <p><code>Settings</code> =&gt; <code>Connect</code> =&gt; click on <img alt="image-20201108174654550.png" src="../images/image-20201108174654550.png" /> and select <code>Discord Notifier</code> add your API key and you're done.</p>
 <details class="example"><summary>Radarr Example</summary><p>In Radarr go to <code>Settings</code> =&gt; <code>Connect</code> =&gt; Click on <img alt="image-20201108174654550" src="../images/image-20201108174654550.png" /> and select <code>DiscordNotifier.com</code>.</p>
 <p><img alt="image-20201108154540683" src="../images/image-20201108154540683.png" /></p>
@@ -1624,7 +1624,7 @@
 that's why we're going to use the webhook method.</p>
 <p><img alt="image-20201108175840774" src="../images/image-20201108175840774.png" /></p>
 <p><code>Settings</code> =&gt; <code>Connect</code> &gt; Click on <img alt="image-20201108174654550.png" src="../images/image-20201108174654550.png" /> and select <code>Webhook</code>.</p>
-<p>Add the following info.</p>
+<p>Add the following info:</p>
 <p><strong>Name</strong>: Discord Notifier</p>
 <p><strong>Enable:</strong> <code>On Grab</code>, <code>On Import</code>, <code>On Upgrade</code>, <code>On Health Issue</code> &amp; <code>Include Health Warnings</code>.</p>
 <p><strong>URL:</strong> The URL that you can copy/paste from the integrations page.</p>
@@ -1647,7 +1647,7 @@ that's why we're going to use the webhook method.</p>
 <p><img alt="image-20201108183922518" src="../images/image-20201108183922518.png" /></p>
 <p><code>Settings</code> =&gt; <code>Notifications</code> =&gt; and select<code>JSON</code></p>
 <p>On the top click on <img alt="image-20201108191244845" src="../images/image-20201108191244845.png" /> <code>Edit</code> icon and Enable the notification type.</p>
-<p>Add the JSON URL that you can copy/paste from the integrations page.</p>
+<p>Add the JSON URL that you copy/pasted from the integrations page.</p>
 <p>Scroll up and save</p>
 <details class="example"><summary>Bazarr Example</summary><p><code>Settings</code> =&gt; <code>Notifications</code> =&gt; and select<code>JSON</code></p>
 <p><img alt="image-20201108185518511" src="../images/image-20201108185518511.png" /></p>
@@ -1656,7 +1656,7 @@ that's why we're going to use the webhook method.</p>
 <p><img alt="image-20201108190148938" src="../images/image-20201108190148938.png" /></p>
 <ol>
 <li>Enable the JSON Notification.</li>
-<li>Add the JSON URL that you can copy/paste from the integrations page.</li>
+<li>Add the JSON URL that you copy/pasted from the integrations page.</li>
 <li>Click on <code>Test</code> to see if it works.</li>
 <li>If everything is correct click on <code>Ok</code></li>
 </ol>
@@ -1679,7 +1679,8 @@ Click on the middle of the screen on <img alt="image-20201108195006697" src="../
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
 <p>On the top of the integrations page you will have now the ability to test your settings.</p>
 <p><img alt="image-20201108195808555" src="../images/image-20201108195808555.png" /></p>
-<p>Click on the icons to test your notifications.</p>
+<p>Click on the icons to test your notifications.
+After going through this tutorial and you still arent getting notifications in your discord channel from the respective logos, then retry the steps outlined above.  If there is still an issue, try asking in the Discord Notifier <a href="https://discord.gg/AURf8Yz" target="_blank">discord channel</a> for additional support.</p>
                 
                   
                     
@@ -1688,7 +1689,7 @@ Click on the middle of the screen on <img alt="image-20201108195006697" src="../
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-09T23:40:22+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-09</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-10T22:06:41+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-10</span>
     
   </small>
 </div>
