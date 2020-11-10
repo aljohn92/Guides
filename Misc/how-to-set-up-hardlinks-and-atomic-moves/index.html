@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://trash-guides.info/Misc/how-to-provide-a-docker-compose/">
+        <link rel="canonical" href="https://trash-guides.info/Misc/how-to-set-up-hardlinks-and-atomic-moves/">
       
       
         <meta name="author" content="TRaSH">
@@ -20,7 +20,7 @@
     
     
       
-        <title>How to provide a docker compose - TRaSH Guides</title>
+        <title>How To Set Up Hardlinks and Atomic-Moves - TRaSH Guides</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-provide-a-docker-compose" class="md-skip">
+        <a href="#how-to-set-up-hardlinks-and-atomic-moves" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              How to provide a docker compose
+              How To Set Up Hardlinks and Atomic-Moves
             
           </span>
         </div>
@@ -1110,6 +1110,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../how-to-provide-a-docker-compose/" class="md-nav__link">
+      How to provide a docker compose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1120,22 +1132,154 @@
       
     
     
-    <a href="./" class="md-nav__link md-nav__link--active">
-      How to provide a docker compose
-    </a>
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        How To Set Up Hardlinks and Atomic-Moves
+        <span class="md-nav__icon md-icon"></span>
+      </label>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../how-to-set-up-hardlinks-and-atomic-moves/" class="md-nav__link">
+    <a href="./" class="md-nav__link md-nav__link--active">
       How To Set Up Hardlinks and Atomic-Moves
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-setup-for" class="md-nav__link">
+    How to Setup for
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Setup for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockstarter" class="md-nav__link">
+    DockSTARTer
+  </a>
+  
+    <nav class="md-nav" aria-label="DockSTARTer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    Step 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    Step 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unraid" class="md-nav__link">
+    UnRaid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonarr" class="md-nav__link">
+    Sonarr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radarr" class="md-nav__link">
+    Radarr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sabnzbd" class="md-nav__link">
+    SABnzbd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzbget" class="md-nav__link">
+    NZBget
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qbittorent" class="md-nav__link">
+    Qbittorent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deluge" class="md-nav__link">
+    Deluge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1173,6 +1317,136 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-setup-for" class="md-nav__link">
+    How to Setup for
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Setup for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockstarter" class="md-nav__link">
+    DockSTARTer
+  </a>
+  
+    <nav class="md-nav" aria-label="DockSTARTer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    Step 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    Step 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unraid" class="md-nav__link">
+    UnRaid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sonarr" class="md-nav__link">
+    Sonarr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radarr" class="md-nav__link">
+    Radarr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sabnzbd" class="md-nav__link">
+    SABnzbd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzbget" class="md-nav__link">
+    NZBget
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qbittorent" class="md-nav__link">
+    Qbittorent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deluge" class="md-nav__link">
+    Deluge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1183,39 +1457,139 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/TRaSH-/Guides/edit/master/docs/Misc/how-to-provide-a-docker-compose.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/TRaSH-/Guides/edit/master/docs/Misc/how-to-set-up-hardlinks-and-atomic-moves.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="how-to-provide-a-docker-compose">How to provide a docker compose<a class="headerlink" href="#how-to-provide-a-docker-compose" title="Permanent link">&para;</a></h1>
-<p>When you're running dockers and you need help on discord etc you often hear the question:</p>
-<p>"Provide a docker compose"</p>
-<p>If you need to provide this info always remember to provide it from all your arrs (Sonarr, Radarr, Lidarr, Bazarr) and also from your download client(s).</p>
-<p>If you're using a system with a GUI (Synology, unRAID, OMV, etc.) it's not always easy to provide a docker compose but it's possible.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please don't use screenshots to provide the info as they aren't always revealing all the needed info</p>
-</div>
-<p>Use one of the following from terminal(puTTy) to get the docker compose with or without the use of <code>sudo</code>.</p>
-<div class="highlight"><pre><span></span><code>sudo docker run --rm <span class="se">\</span>
-    -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
-    red5d/docker-autocompose <span class="se">\</span>
-    CONTAINER_NAME CONTAINER_NAME2
-</code></pre></div>
-<details class="example"><summary>Example:</summary><div class="highlight"><pre><span></span><code>   sudo docker run --rm <span class="se">\</span>
-   -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
-   red5d/docker-autocompose <span class="se">\</span>
-   sonarr radarr bazarr nzbget
-</code></pre></div>
-</details>
-<p>Paste the results on one of the following sites.</p>
+                <h1 id="how-to-set-up-hardlinks-and-atomic-moves">How To Set Up Hardlinks and Atomic-Moves<a class="headerlink" href="#how-to-set-up-hardlinks-and-atomic-moves" title="Permanent link">&para;</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://gist.github.com" target="_blank">gist.github.com</a></li>
-<li><a href="https://hastebin.com" target="_blank">hastebin.com</a></li>
-<li><a href="https://pastebin.com" target="_blank">pastebin.com</a></li>
+<li>Instant moves (Atomic-Moves) during import of the *arr (useful when using Usenet).</li>
+<li>You want to perma seed.</li>
+<li>You don't want to use twice the storage when using torrents. (hardlinks).</li>
 </ul>
-<p>If you use docker run command to create your docker containers, paste your run command in to <a href="https://www.composerize.com/" target="_blank">composerize</a></p>
+<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
+<details class="faq"><summary>FAQ</summary><ol>
+<li>
+<p>Q: <strong>What are the <code>*arr</code>?</strong></p>
+<ul>
+<li>Sonarr, Radarr, Lidarr, etc.</li>
+</ul>
+</li>
+<li>
+<p>Q: <strong>What are hardlinks?</strong></p>
+<ul>
+<li>Short answer is "having a file in multiple folders" without using up your storage.<ul>
+<li><a href="https://medium.com/@krisbredemeier/the-difference-between-hard-links-and-soft-or-symbolic-links-780149244f7d" target="_blank">Long Answer</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Q: <strong>What's Atomic Moves?</strong></p>
+<ul>
+<li>A real move and not a copy file from download folder to media folder and then delete file from download folder.</li>
+</ul>
+</li>
+</ol>
+</details>
+<hr />
+<p>The default <a href="https://hub.docker.com/u/linuxserver" target="_blank">linuxserver</a> default path suggestions (<code>/tv</code>, <code>/movies</code> , <code>/downloads</code>) will break hard links and atomic moves. because they are seen as different volumes inside the container, resulting in a slow copy.</p>
+<hr />
+<h3 id="how-to-setup-for">How to Setup for<a class="headerlink" href="#how-to-setup-for" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#dockstarter">DockSTARTer</a></li>
+<li><a href="#unraid">UnRaid</a> (soon)</li>
+</ul>
+<h4 id="dockstarter">DockSTARTer<a class="headerlink" href="#dockstarter" title="Permanent link">&para;</a></h4>
+<details class="summary"><summary>DockSTARTer</summary><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I'm using the default paths in this example, and will keep the other paths unchanged so nothing will break if you make a mistake.</p>
+</div>
+<p>We're going to use a mounted drive that we're going to use as storage for downloads and your media.
+In this example the mounted drive will be mounted to <code>/mnt/</code> with the following folder structure.</p>
+<div class="highlight"><pre><span></span><code>storage
+├── downloads
+|  ├── torrents
+│  |   ├── movies
+│  |   ├── music
+│  |   └── tv
+|  └── usenet
+│     ├── movies
+│     ├── music
+│     └── tv
+└── medialibrary
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+<h5 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h5>
+<p>To accomplisch this we need to change first a few paths in your <code>.env</code> (Usually <code>~/.docker/compose/.env</code>)</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Global Settings</span>
+<span class="l l-Scalar l-Scalar-Plain">COMPOSE_HTTP_TIMEOUT=60</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERCONFDIR=~/.config/appdata</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERGID=999</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERHOSTNAME=DockSTARTer</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERLOGGING_MAXFILE=10</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERLOGGING_MAXSIZE=200k</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERSTORAGEDIR=/mnt/storage</span>
+<span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
+<span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
+<span class="l l-Scalar l-Scalar-Plain">TZ=America/Chicago</span>
+
+<span class="l l-Scalar l-Scalar-Plain"># DEPRECATED Settings (will be removed at the end of 2020)</span>
+<span class="l l-Scalar l-Scalar-Plain">DOCKERSHAREDDIR=~/shared</span>
+<span class="l l-Scalar l-Scalar-Plain">DOWNLOADSDIR=/mnt/downloads</span>
+<span class="l l-Scalar l-Scalar-Plain">MEDIADIR_AUDIOBOOKS=/mnt/medialibrary/audiobooks</span>
+<span class="l l-Scalar l-Scalar-Plain">MEDIADIR_BOOKS=/mnt/medialibrary/books</span>
+<span class="l l-Scalar l-Scalar-Plain">MEDIADIR_COMICS=/mnt/medialibrary/comics</span>
+<span class="l l-Scalar l-Scalar-Plain">MEDIADIR_MOVIES=/mnt/medialibrary/movies</span>
+<span class="l l-Scalar l-Scalar-Plain">MEDIADIR_MUSIC=/mnt/medialibrary/music</span>
+<span class="l l-Scalar l-Scalar-Plain">MEDIADIR_TV=/mnt/medialibrary/tv</span>
+</code></pre></div>
+<h5 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h5>
+<p>When that's all set then you will need to change the paths you're going to use in the containers from:</p>
+<p><code>/downloads</code> =&gt; <code>/storage/downloads</code></p>
+<p><code>/audiobooks</code> =&gt; <code>/storage/medialibrary/audiobooks</code></p>
+<p><code>/books</code> =&gt; <code>/storage/medialibrary/books</code></p>
+<p><code>/comics</code>  =&gt; <code>/storage/medialibrary/comics</code></p>
+<p><code>/movies</code> =&gt; <code>/storage/medialibrary/movies</code></p>
+<p><code>/music</code> =&gt; <code>/storage/medialibrary/music</code></p>
+<p><code>/tv</code> =&gt; <code>/storage/medialibrary/tv</code></p>
+</details>
+<h4 id="unraid">UnRaid<a class="headerlink" href="#unraid" title="Permanent link">&para;</a></h4>
+<details class="summary"><summary>UnRaid</summary><p>Soon</p>
+</details>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Pick one path layout and use it for all of them.</p>
+<p>It doesn't matter if you like to use <code>/data</code>, <code>/shared</code>, <code>/storage</code> or whatever.</p>
+</div>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#sonarr">Sonarr</a></li>
+<li><a href="#radarr">Radarr</a></li>
+<li><a href="#sabnzbd">SABnzbd</a></li>
+<li><a href="#nzbget">NZBget</a></li>
+<li><a href="#qbittorent">Qbittorent</a></li>
+<li><a href="#deluge">Deluge</a></li>
+</ul>
+<h4 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h4>
+<p>placeholder</p>
+<h4 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">&para;</a></h4>
+<p>placeholder</p>
+<h4 id="sabnzbd">SABnzbd<a class="headerlink" href="#sabnzbd" title="Permanent link">&para;</a></h4>
+<p>placeholder</p>
+<h4 id="nzbget">NZBget<a class="headerlink" href="#nzbget" title="Permanent link">&para;</a></h4>
+<p>placeholder</p>
+<h4 id="qbittorent">Qbittorent<a class="headerlink" href="#qbittorent" title="Permanent link">&para;</a></h4>
+<p>placeholder</p>
+<h4 id="deluge">Deluge<a class="headerlink" href="#deluge" title="Permanent link">&para;</a></h4>
+<p>placeholder</p>
+<hr />
+<p>Big Thnx to <a href="https://github.com/fryfrog" target="_blank">fryfrog</a> for his <a href="https://wiki.servarr.com/Docker_Guide" target="_blank">Docker Guide</a> that I used as basis for this guide.</p>
                 
                   
                     
@@ -1224,7 +1598,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-10T08:22:38+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-10</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-10T19:05:59+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-10</span>
     
   </small>
 </div>
@@ -1247,7 +1621,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../How-to-setup-Torguard-for-port-forwarding/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../how-to-provide-a-docker-compose/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1256,19 +1630,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Setup TorGuard for port forwarding
+                How to provide a docker compose
               </div>
             </div>
           </a>
         
         
-          <a href="../how-to-set-up-hardlinks-and-atomic-moves/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../x265-4k/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                How To Set Up Hardlinks and Atomic-Moves
+                x265-4k
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
