@@ -1239,22 +1239,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sabnzbd" class="md-nav__link">
-    SABnzbd
+  <a href="#sabnzbd-config" class="md-nav__link">
+    SABnzbd config
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#nzbget" class="md-nav__link">
-    NZBget
+    NZBGet
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#qbittorent" class="md-nav__link">
-    Qbittorent
+  <a href="#qbittorrent" class="md-nav__link">
+    qBittorrent
   </a>
   
 </li>
@@ -1262,6 +1262,13 @@
           <li class="md-nav__item">
   <a href="#deluge" class="md-nav__link">
     Deluge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutorrent" class="md-nav__link">
+    ruTorrent
   </a>
   
 </li>
@@ -1408,22 +1415,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sabnzbd" class="md-nav__link">
-    SABnzbd
+  <a href="#sabnzbd-config" class="md-nav__link">
+    SABnzbd config
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#nzbget" class="md-nav__link">
-    NZBget
+    NZBGet
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#qbittorent" class="md-nav__link">
-    Qbittorent
+  <a href="#qbittorrent" class="md-nav__link">
+    qBittorrent
   </a>
   
 </li>
@@ -1431,6 +1438,13 @@
           <li class="md-nav__item">
   <a href="#deluge" class="md-nav__link">
     Deluge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutorrent" class="md-nav__link">
+    ruTorrent
   </a>
   
 </li>
@@ -1480,10 +1494,7 @@
 <li>
 <p>Q: <strong>What are hardlinks?</strong></p>
 <ul>
-<li>Short answer is "having a file in multiple folders" without using up your storage.<ul>
-<li><a href="https://medium.com/@krisbredemeier/the-difference-between-hard-links-and-soft-or-symbolic-links-780149244f7d" target="_blank">Long Answer</a>.</li>
-</ul>
-</li>
+<li>Short answer is "having a file in multiple folders" without using up your storage, <a href="https://medium.com/@krisbredemeier/the-difference-between-hard-links-and-soft-or-symbolic-links-780149244f7d" target="_blank">Long Answer</a>.</li>
 </ul>
 </li>
 <li>
@@ -1562,31 +1573,65 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <details class="summary"><summary>UnRaid</summary><p>Soon</p>
 </details>
 <hr />
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Pick one path layout and use it for all of them.</p>
-<p>It doesn't matter if you like to use <code>/data</code>, <code>/shared</code>, <code>/storage</code> or whatever.</p>
+<p>It doesn't matter if you prefer to use <code>/data</code>, <code>/shared</code>, <code>/storage</code> or whatever.</p>
+<p>The screenshots in the examples are using the following root path <code>/storage</code></p>
 </div>
-<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<pre><code>- [Sonarr](#sonarr)
-- [Radarr](#radarr)
-- [SABnzbd](#sabnzbd)
-- [NZBget](#nzbget)
-- [Qbittorent](#qbittorent)
-- [Deluge](#deluge)
-</code></pre>
+<!-- no toc -->
+<ul>
+<li><a href="#sonarr">Sonarr</a></li>
+<li><a href="#radarr">Radarr</a></li>
+<li><a href="#sabnzbd">SABnzbd</a></li>
+<li><a href="#nzbget">NZBGet</a></li>
+<li><a href="#qbittorent">qBittorrent</a></li>
+<li><a href="#deluge">Deluge</a></li>
+<li><a href="#rutorrent">ruTorrent</a></li>
+</ul>
 <h4 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h4>
-<p>placeholder</p>
+<details class="example"><summary>Sonarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><img alt="image-20201111190131842" src="../images/image-20201111190131842.png" /></p>
+<p><code>Series</code> =&gt; <code>Add New</code></p>
+<p><img alt="image-20201111190300091" src="../images/image-20201111190300091.png" /></p>
+<p><img alt="image-20201111184955092" src="../images/image-20201111184955092.png" /></p>
+</details>
 <h4 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">&para;</a></h4>
-<p>placeholder</p>
-<h4 id="sabnzbd">SABnzbd<a class="headerlink" href="#sabnzbd" title="Permanent link">&para;</a></h4>
-<p>placeholder</p>
-<h4 id="nzbget">NZBget<a class="headerlink" href="#nzbget" title="Permanent link">&para;</a></h4>
-<p>placeholder</p>
-<h4 id="qbittorent">Qbittorent<a class="headerlink" href="#qbittorent" title="Permanent link">&para;</a></h4>
-<p>placeholder</p>
+<details class="example"><summary>Radarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><img alt="image-20201111185454928" src="../images/image-20201111185454928.png" /></p>
+<p><code>Movies</code> =&gt; <code>Add New</code></p>
+<p><img alt="image-20201111185158391" src="../images/image-20201111185158391.png" /></p>
+<p><img alt="image-20201111185304391" src="../images/image-20201111185304391.png" /></p>
+</details>
+<h4 id="sabnzbd-config">SABnzbd config<a class="headerlink" href="#sabnzbd-config" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>SABnzbd Examples</summary><p><code>SABnzbd config</code> =&gt; <code>Folders</code></p>
+<p><img alt="image-20201111190431670" src="../images/image-20201111190431670.png" /></p>
+<p><code>SABnzbd config</code> =&gt; <code>Categories</code></p>
+<p><img alt="image-20201111190616235" src="../images/image-20201111190616235.png" /></p>
+</details>
+<h4 id="nzbget">NZBGet<a class="headerlink" href="#nzbget" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>NZBGet Examples</summary><p><code>Settings</code> =&gt; <code>PATHS</code></p>
+<p><img alt="image-20201111191413616" src="../images/image-20201111191413616.png" /></p>
+<p><code>Settings</code> =&gt; <code>CATEGORIES</code></p>
+<p><img alt="image-20201111191615112" src="../images/image-20201111191615112.png" /></p>
+</details>
+<h4 id="qbittorrent">qBittorrent<a class="headerlink" href="#qbittorrent" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>qBittorrent Examples</summary><p><code>Options</code> =&gt; <code>Downloads</code></p>
+<p><img alt="image-20201111191744466" src="../images/image-20201111191744466.png" /></p>
+</details>
 <h4 id="deluge">Deluge<a class="headerlink" href="#deluge" title="Permanent link">&para;</a></h4>
-<p>placeholder</p>
+<details class="example"><summary>Deluge Example</summary><p><code>Preferences</code> =&gt; <code>Downloads</code></p>
+<p><img alt="image-20201111191831583" src="../images/image-20201111191831583.png" /></p>
+</details>
+<h4 id="rutorrent">ruTorrent<a class="headerlink" href="#rutorrent" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>ruTorrent Examples</summary><p><code>../config/rtorrent/config/rtorrent.rc</code> (path to your appdata)</p>
+<p><img alt="image-20201111201032265" src="../images/image-20201111201032265.png" /></p>
+<p><code>Settings</code> =&gt; <code>Downloads</code></p>
+<p><img alt="image-20201111202759459" src="../images/image-20201111202759459.png" /></p>
+<p><code>Settings</code> =&gt; <code>Autotools</code></p>
+<p><img alt="image-20201111202945331" src="../images/image-20201111202945331.png" /></p>
+</details>
 <hr />
 <p>Big Thnx to <a href="https://github.com/fryfrog" target="_blank">fryfrog</a> for his <a href="https://wiki.servarr.com/Docker_Guide" target="_blank">Docker Guide</a> that I used as basis for this guide.</p>
                 
@@ -1597,7 +1642,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-10T22:21:01+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-10</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-11T20:48:25+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-11</span>
     
   </small>
 </div>
