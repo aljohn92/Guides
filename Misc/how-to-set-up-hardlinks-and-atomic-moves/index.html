@@ -1478,11 +1478,19 @@
                 
                 <h1 id="how-to-set-up-hardlinks-and-atomic-moves">How To Set Up Hardlinks and Atomic-Moves<a class="headerlink" href="#how-to-set-up-hardlinks-and-atomic-moves" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you’re wondering why hard links aren’t working or why a simple move is taking far longer than it should.</p>
+<p>Here we will try to explains it.</p>
+<p>The paths you use on the inside matter. Because of how Docker’s volumes work, passing in two or three volumes such as the commonly suggested <code>/tv</code>, <code>/movies</code> and <code>/downloads</code> makes them look like two or three file systems, even if they aren’t. This means hard links won’t work and instead of an instant move, a slower and more I/O intensive copy + delete is used.</p>
+</div>
+<p>So you want one of the following ?</p>
 <ul>
-<li>Instant moves (Atomic-Moves) during import of the *arr (useful when using Usenet).</li>
-<li>You want to perma seed.</li>
-<li>You don't want to use twice the storage when using torrents. (hardlinks).</li>
+<li>Instant moves (Atomic-Moves) during import of the *arr (useful when using Usenet)?</li>
+<li>You don't want to use twice the storage when using torrents. (hardlinks)?</li>
+<li>You want to perma seed?</li>
 </ul>
+<p>Then keep reading.</p>
 <h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
 <details class="faq"><summary>FAQ</summary><ol>
 <li>
@@ -1505,8 +1513,6 @@
 </li>
 </ol>
 </details>
-<hr />
-<p>The default <a href="https://hub.docker.com/u/linuxserver" target="_blank">linuxserver</a> default path suggestions (<code>/tv</code>, <code>/movies</code> , <code>/downloads</code>) will break hard links and atomic moves. because they are seen as different volumes inside the container, resulting in a slow copy.</p>
 <hr />
 <h3 id="how-to-setup-for">How to Setup for<a class="headerlink" href="#how-to-setup-for" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1641,7 +1647,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-12T17:41:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-12</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-12T18:13:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-12</span>
     
   </small>
 </div>
