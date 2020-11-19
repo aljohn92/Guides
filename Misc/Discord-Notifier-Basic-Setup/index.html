@@ -1165,6 +1165,26 @@
     Simple channel setup
   </a>
   
+    <nav class="md-nav" aria-label="Simple channel setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#granular-arr-setup" class="md-nav__link">
+    Granular arr setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#granular-media-setup" class="md-nav__link">
+    Granular media setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1471,6 +1491,26 @@
     Simple channel setup
   </a>
   
+    <nav class="md-nav" aria-label="Simple channel setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#granular-arr-setup" class="md-nav__link">
+    Granular arr setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#granular-media-setup" class="md-nav__link">
+    Granular media setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1696,7 +1736,7 @@
 <ol>
 <li>Click on the cog (settings) icon to configure what will be in your notification.</li>
 </ol>
-<h4 id="notification-settings-configuration">Notification Settings Configuration<a class="headerlink" href="#notification-settings-configuration" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>Notification Settings Configuration</summary><h4 id="notification-settings-configuration">Notification Settings Configuration<a class="headerlink" href="#notification-settings-configuration" title="Permanent link">&para;</a></h4>
 <p><img alt="image-20201117-121530" src="../images/image-20201117-121530.png" /></p>
 <ol>
 <li>Enable/Disable notification trigger</li>
@@ -1704,6 +1744,7 @@
 <li>Expand trigger to enable/disable message fields</li>
 <li>Customize the layout for the notification (drag/drop editor to the right in the image)</li>
 </ol>
+</details>
 <h3 id="discord-settings">Discord Settings<a class="headerlink" href="#discord-settings" title="Permanent link">&para;</a></h3>
 <div class="indent-L1 indent-B1">
 Setup your discord channels and your reactions and invite the bot into your channel.
@@ -1720,14 +1761,9 @@ You can do it all from one channel or separate the notifications (granular) for 
 </div>
 
 <h4 id="simple-channel-setup">Simple channel setup<a class="headerlink" href="#simple-channel-setup" title="Permanent link">&para;</a></h4>
-<div class="indent-L1">
-
-`#media` => All the `*arr` notifications you setup in [Notification Settings](#notification-settings).
-
-`#errors` => Health checks, network errors, etc.
-
-`#plex` => Play, resume, etc. for Plex.
-</div>
+<p><code>#media</code> =&gt; All the <code>*arr</code> notifications you setup in <a href="#notification-settings">Notification Settings</a>.</p>
+<p><code>#errors</code> =&gt; Health checks, network errors, etc.</p>
+<p><code>#plex</code> =&gt; Play, resume, etc. for Plex.</p>
 <p>After you create the needed channels, it's time to add them to the <code>Setup the channels</code></p>
 <p>First we need to get the channel ID's from your server/channel</p>
 <p>Open your User Settings -&gt; Appearance -&gt; Enable Developer Mode.</p>
@@ -1743,7 +1779,12 @@ You can do it all from one channel or separate the notifications (granular) for 
 <li>Use this option if you want to use separate channels for the notifications (see below).</li>
 <li>Use this option if you want to use separate channels for the notifications.</li>
 </ol>
+<details class="example"><summary>Granular arr setup</summary><h5 id="granular-arr-setup">Granular arr setup<a class="headerlink" href="#granular-arr-setup" title="Permanent link">&para;</a></h5>
 <p><img alt="Image-20201117-145908" src="../images/Image-20201117-145908.png" /></p>
+</details>
+<details class="example"><summary>Granular media setup</summary><h5 id="granular-media-setup">Granular media setup<a class="headerlink" href="#granular-media-setup" title="Permanent link">&para;</a></h5>
+<p><img alt="granular-media-setup" src="../images/granular-media-setup.png" /></p>
+</details>
 <h3 id="invite-the-bot">Invite the bot<a class="headerlink" href="#invite-the-bot" title="Permanent link">&para;</a></h3>
 <p>It's time to invite the bot in to your Server/Channels by clicking on the following link.</p>
 <p><img alt="image-20201107203033357" src="../images/image-20201107203033357.png" /></p>
@@ -1879,8 +1920,8 @@ Click on the middle of the screen on <img alt="image-20201108195006697" src="../
 <li>Click on <code>SAVE CHANGES</code></li>
 </ol>
 </details>
-<h3 id="advanced-plex-settings">Advanced Plex Settings<a class="headerlink" href="#advanced-plex-settings" title="Permanent link">&para;</a></h3>
-<details class="info"><summary>Advanced Plex Settings</summary><h4 id="python-webhook">Python Webhook<a class="headerlink" href="#python-webhook" title="Permanent link">&para;</a></h4>
+<details class="info"><summary>Advanced Plex Settings</summary><h3 id="advanced-plex-settings">Advanced Plex Settings<a class="headerlink" href="#advanced-plex-settings" title="Permanent link">&para;</a></h3>
+<h4 id="python-webhook">Python Webhook<a class="headerlink" href="#python-webhook" title="Permanent link">&para;</a></h4>
 <p><div class="indent-L1 indent-B1">
 Python is required for this to work. Make sure your docker solution has it available if running docker.
 </div></p>
@@ -1919,7 +1960,7 @@ After going through this tutorial and you still arent getting notifications in y
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-18T20:52:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-18</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-19T17:44:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-19</span>
     
   </small>
 </div>
