@@ -1258,6 +1258,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#synology" class="md-nav__link">
+    Synology
+  </a>
+  
+    <nav class="md-nav" aria-label="Synology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puid-and-pgid" class="md-nav__link">
+    PUID and PGID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_1" class="md-nav__link">
+    Folder Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appdata" class="md-nav__link">
+    Appdata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-you-need-to-do" class="md-nav__link">
+    Changes you need to do
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-docker-compose" class="md-nav__link">
+    Run the Docker Compose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1496,6 +1544,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#synology" class="md-nav__link">
+    Synology
+  </a>
+  
+    <nav class="md-nav" aria-label="Synology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puid-and-pgid" class="md-nav__link">
+    PUID and PGID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_1" class="md-nav__link">
+    Folder Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appdata" class="md-nav__link">
+    Appdata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-you-need-to-do" class="md-nav__link">
+    Changes you need to do
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-docker-compose" class="md-nav__link">
+    Run the Docker Compose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1627,6 +1723,7 @@
 <ul>
 <li><a href="#dockstarter">DockSTARTer</a></li>
 <li><a href="#unraid">UnRaid</a></li>
+<li><a href="#synology">Synology</a></li>
 </ul>
 <h4 id="dockstarter">DockSTARTer<a class="headerlink" href="#dockstarter" title="Permanent link">&para;</a></h4>
 <details class="summary"><summary>DockSTARTer</summary><div class="admonition note">
@@ -1737,11 +1834,11 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <h5 id="torrent-clients">Torrent clients<a class="headerlink" href="#torrent-clients" title="Permanent link">&para;</a></h5>
 <p>qBittorrent, Deluge, ruTorrent</p>
 <p><img alt="unraid-torrent-clients" src="../images/image-20201112201012153.png" /></p>
-<p><code>Container Path:</code> =&gt; <code>/data/torrent</code></p>
+<p><code>Container Path:</code> =&gt; <code>/data/torrents</code></p>
 <p><code>Host Path</code>: =&gt; <code>/mnt/user/data/torrents</code></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The reason why we use <code>/data/torrent</code> for the torrent client is because it only needs access to the torrent files. In the torrent software settings, you’ll need to reconfigure paths and you can sort into sub-folders like/data/torrents/{tv|movies|music}.</p>
+<p>The reason why we use <code>/data/torrents</code> for the torrent client is because it only needs access to the torrent files. In the torrent software settings, you’ll need to reconfigure paths and you can sort into sub-folders like/data/torrents/{tv|movies|music}.</p>
 </div>
 <div class="highlight"><pre><span></span><code>data
 └── torrents
@@ -1804,6 +1901,239 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 </code></pre></div>
 <h5 id="final-result">Final Result<a class="headerlink" href="#final-result" title="Permanent link">&para;</a></h5>
 <p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/image-20201112210400294.png" target="_blank"><img alt="final-results" src="../images/image-20201112210400294.png" /></a></p>
+</details>
+<h4 id="synology">Synology<a class="headerlink" href="#synology" title="Permanent link">&para;</a></h4>
+<details class="summary"><summary>Synology</summary><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Being I don't have a Synology myself and I kind of hate the Synology GUI for the dockers, I'm doing this with the use of docker-compose.</p>
+<p>This works like 10x faster then the GUI and after adding it shows up in the GUI.</p>
+</div>
+<p>We need to get some information that we need later to setup the docker-compose file.</p>
+<h6 id="puid-and-pgid">PUID and PGID<a class="headerlink" href="#puid-and-pgid" title="Permanent link">&para;</a></h6>
+<p>In order for the Docker container to access the shares on the Synology,
+we need to give it the same permissions as your main user who has access to those shares.
+For this we need to figure out the PUID and the PGID of the user having access to your shares.</p>
+<p>You will need to SSH into your Synology.
+If you didn't already enable it you need to do that first</p>
+<p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/synology-control-panel.png" target="_blank"><img alt="synology-control-panel" src="../images/synology-control-panel.png" /></a></p>
+<p>Then use a program like Putty and SSH to your Synology.</p>
+<p>Login if you get a popup asking if you want to trust the key,
+Just press <code>OK</code> or <code>ACCEPT</code></p>
+<p>Enter the login information of your main Synology user account.</p>
+<p><img alt="synology-id" src="../images/synology-id.png" /></p>
+<p>Once logged in type <code>id</code>.
+This will show your UID (aka PUID).
+Which in this screenshot is <code>1026</code> for the administrator
+and the GID (aka PGID) which is <code>100</code> for the users group.
+Remember these values for later use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Yes we know it's not recommended to use the admin account but if you already know this then you wouldn't need to read this ;)</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>To get Hardlinks and Atomic-Moves working with your Synology you will need to make use of <strong>ONE</strong> share with subfolders.</p>
+</div>
+<h5 id="folder-structure_1">Folder Structure<a class="headerlink" href="#folder-structure_1" title="Permanent link">&para;</a></h5>
+<p>For this example we're going to make use of a share called <code>data</code>.</p>
+<p>On the host (Synology) you will need to add <code>/volume1/</code> before it. So <code>/volume1/data</code></p>
+<p>The <code>data</code> folder has sub-folders for <code>torrents</code> and <code>usenet</code> and each of these have sub-folders for <code>tv</code>, <code>movie</code> and <code>music</code> downloads to keep things neat. The <code>media</code> folder has nicely named <code>TV</code>, <code>Movies</code> and <code>Music</code> sub-folders, this is your library and what you’d pass to Plex, Emby or JellyFin.</p>
+<p>These subfolders you need to create your self.</p>
+<div class="highlight"><pre><span></span><code>data
+├── torrents
+│  ├── movies
+│  ├── music
+│  └── tv
+├── usenet
+│  ├── movies
+│  ├── music
+│  └── tv
+└── media
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+<p><em>I'm using lower case on all folder on  purpose, being Linux is case sensitive.</em></p>
+<h5 id="appdata">Appdata<a class="headerlink" href="#appdata" title="Permanent link">&para;</a></h5>
+<p>Your appdata will be stored in <code>/volume1/docker/{appname}</code>
+These folders you need to create your self.</p>
+<p>A docker-compose file exist of 1 file that holds all the needed info of all your docker containers.
+this makes it easy to maintain and compare paths.</p>
+<p>Download this <a href="../files/synology-docker-compose.yml">synology-docker-compose.yml</a> to your <code>/volume1/docker/</code> location so you got your important stuff together.
+This docker-compose file will have the following docker containers included.</p>
+<ul>
+<li>Radarr</li>
+<li>Sonarr</li>
+<li>Bazarr (Subtitle searcher and downloaded)</li>
+<li>NZBGet</li>
+<li>qBittorent</li>
+<li>Plex</li>
+<li>Watchtower (automatic docker container updater)</li>
+</ul>
+<p>I've added at the end of the Synology guide a few examples you can add/replace.</p>
+<details class="example"><summary>synology-docker-compose.yml</summary><div class="highlight"><pre><span></span><code>version: &quot;3.2&quot;
+services:
+# Radarr - https://hotio.dev/containers/radarr/
+  radarr:
+    container_name: radarr
+    image: ghcr.io/hotio/radarr:nightly
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 7878:7878
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /volume1/docker/radarr:/config # Change &quot;/volume1/docker/radarr&quot; with the path your config will be.
+      - /volume1/data:/data # Change &quot;/volume1/data&quot; with the path where your library + torrent/usenet downloads both are.
+# Sonarr - https://hotio.dev/containers/sonarr/
+  sonarr:
+    container_name: sonarr
+    image: ghcr.io/hotio/sonarr:nightly
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 8989:8989
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /volume1/docker/sonarr:/config # Change &quot;/volume1/docker/sonarr&quot; with the path your config will be.
+      - /volume1/data:/data # Change &quot;/volume1/data&quot; with the path where your library + torrent/usenet downloads both are.
+# Bazarr - https://hotio.dev/containers/bazarr/
+  bazarr:
+    container_name: bazarr
+    image: ghcr.io/hotio/bazarr:nightly
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 6767:6767
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /volume1/docker/bazarr:/config # Change &quot;/volume1/docker/bazarr&quot; with the path your config will be.
+      - /volume1/data/media:/data/media # Change &quot;/volume1/data/media&quot; with the path where your library are(sonarr+radarr).
+# NZBGet - https://hotio.dev/containers/nzbget/
+  nzbget:
+    container_name: nzbget
+    image: ghcr.io/hotio/nzbget:latest
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 6789:6789/tcp
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /volume1/docker/nzbget:/config:rw # Change &quot;/volume1/docker/nzbget&quot; with the path your config will be.
+      - /volume1/data/usenet:/data/usenet:rw # Change &quot;/volume1/data/usenet&quot; with the path your usenet data ends up in.
+# qBittorrent - https://docs.linuxserver.io/images/docker-qbittorrent
+  qbittorrent:
+    container_name: qbittorrent
+    image: ghcr.io/linuxserver/qbittorrent
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8080:8080
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+      - UMASK_SET=022
+      - WEBUI_PORT=8080
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /volume1/docker/qbittorrent:/config:rw # Change &quot;/home/dockeruser/.config/qbittorrent&quot; with the path your config will be.
+      - /volume1/data/torrents:/data/torrents:rw # Change &quot;/volume1/data/torrents&quot; with the path your usenet data ends up in.
+# Plex - https://hotio.dev/containers/plex/
+  plex:
+    container_name: plex
+    image: ghcr.io/hotio/plex
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 32400:32400
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+      - UMASK=002
+      - ARGS=
+      - DEBUG=no
+      - PLEX_CLAIM=
+      - ADVERTISE_IP=
+      - ALLOWED_NETWORKS=
+      - PLEX_PASS=no
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /volume1/docker/plex:/config:rw
+      - /volume1/data/media:/data/media:rw # Change &quot;/volume1/data/media&quot; with the path where your library are(sonarr+radarr).
+      - /tmp:/transcode:rw
+# automatic docker container updater - https://github.com/containrrr/watchtower
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    environment:
+      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
+      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
+      - TZ=Europe/Amsterdam # Change to your timezone
+      - UMASK=022
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_STOPPED=false
+      - WATCHTOWER_MONITOR_ONLY=false
+      - WATCHTOWER_NOTIFICATIONS_LEVEL=info
+      - WATCHTOWER_NOTIFICATIONS=shoutrrr
+      - WATCHTOWER_NOTIFICATION_TEMPLATE={{range .}}{{.Message}}{{println}}{{end}}
+      - WATCHTOWER_SCHEDULE=0 0 4 * * * # use cron to change update interval set at 4am.
+      - WATCHTOWER_TIMEOUT=10s
+      - WATCHTOWER_NOTIFICATION_URL=
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+</code></pre></div>
+</details>
+<h5 id="changes-you-need-to-do">Changes you need to do<a class="headerlink" href="#changes-you-need-to-do" title="Permanent link">&para;</a></h5>
+<ol>
+<li>PUID/PGID (this info you got earlier)</li>
+<li>TZ (Change to your timezone)</li>
+</ol>
+<div class="admonition importand">
+<p class="admonition-title">Importand</p>
+<p>make sure you deleted/removed all your existing dockers from the GUI and also remove your native installs of these applications !!!</p>
+</div>
+<h5 id="run-the-docker-compose">Run the Docker Compose<a class="headerlink" href="#run-the-docker-compose" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>sudo docker-compose up -d
+</code></pre></div>
+<p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differene.</p>
+<p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
 </details>
 <hr />
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
@@ -1874,7 +2204,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-18T19:16:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-18</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-20T22:28:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-20</span>
     
   </small>
 </div>
