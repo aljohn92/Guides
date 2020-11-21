@@ -1171,15 +1171,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1" class="md-nav__link">
-    Step 1
+  <a href="#folder-structure" class="md-nav__link">
+    Folder Structure
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2" class="md-nav__link">
-    Step 2
+  <a href="#changes-to-the-env" class="md-nav__link">
+    Changes to the .env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-your-paths" class="md-nav__link">
+    Changes to your paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockstarter-examples" class="md-nav__link">
+    DockSTARTer Examples
   </a>
   
 </li>
@@ -1205,7 +1219,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#folder-structure" class="md-nav__link">
+  <a href="#folder-structure_1" class="md-nav__link">
     Folder Structure
   </a>
   
@@ -1267,14 +1281,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#puid-and-pgid" class="md-nav__link">
-    PUID and PGID
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#folder-structure_1" class="md-nav__link">
+  <a href="#folder-structure_2" class="md-nav__link">
     Folder Structure
   </a>
   
@@ -1457,15 +1464,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1" class="md-nav__link">
-    Step 1
+  <a href="#folder-structure" class="md-nav__link">
+    Folder Structure
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2" class="md-nav__link">
-    Step 2
+  <a href="#changes-to-the-env" class="md-nav__link">
+    Changes to the .env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-your-paths" class="md-nav__link">
+    Changes to your paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockstarter-examples" class="md-nav__link">
+    DockSTARTer Examples
   </a>
   
 </li>
@@ -1491,7 +1512,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#folder-structure" class="md-nav__link">
+  <a href="#folder-structure_1" class="md-nav__link">
     Folder Structure
   </a>
   
@@ -1553,14 +1574,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#puid-and-pgid" class="md-nav__link">
-    PUID and PGID
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#folder-structure_1" class="md-nav__link">
+  <a href="#folder-structure_2" class="md-nav__link">
     Folder Structure
   </a>
   
@@ -1730,6 +1744,7 @@
 <p class="admonition-title">Note</p>
 <p>I'm using the default paths in this example, and will keep the other paths unchanged so nothing will break if you make a mistake.</p>
 </div>
+<h5 id="folder-structure">Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h5>
 <p>We're going to use a mounted drive that we're going to use as storage for downloads and your media.
 In this example the mounted drive will be mounted to <code>/mnt/</code> with the following folder structure.</p>
 <div class="highlight"><pre><span></span><code>storage
@@ -1747,7 +1762,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
    ├── music
    └── tv
 </code></pre></div>
-<h5 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h5>
+<h5 id="changes-to-the-env">Changes to the .env<a class="headerlink" href="#changes-to-the-env" title="Permanent link">&para;</a></h5>
 <p>To accomplisch this we need to change first a few paths in your <code>.env</code> (Usually <code>~/.docker/compose/.env</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Global Settings</span>
 <span class="l l-Scalar l-Scalar-Plain">COMPOSE_HTTP_TIMEOUT=60</span>
@@ -1771,7 +1786,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <span class="l l-Scalar l-Scalar-Plain">MEDIADIR_MUSIC=/mnt/medialibrary/music</span>
 <span class="l l-Scalar l-Scalar-Plain">MEDIADIR_TV=/mnt/medialibrary/tv</span>
 </code></pre></div>
-<h5 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h5>
+<h5 id="changes-to-your-paths">Changes to your paths<a class="headerlink" href="#changes-to-your-paths" title="Permanent link">&para;</a></h5>
 <p>When that's all set then you will need to change the paths you're going to use in the containers from:</p>
 <p><code>/downloads</code> =&gt; <code>/storage/downloads</code></p>
 <p><code>/audiobooks</code> =&gt; <code>/storage/medialibrary/audiobooks</code></p>
@@ -1780,6 +1795,53 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p><code>/movies</code> =&gt; <code>/storage/medialibrary/movies</code></p>
 <p><code>/music</code> =&gt; <code>/storage/medialibrary/music</code></p>
 <p><code>/tv</code> =&gt; <code>/storage/medialibrary/tv</code></p>
+<h5 id="dockstarter-examples">DockSTARTer Examples<a class="headerlink" href="#dockstarter-examples" title="Permanent link">&para;</a></h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The screenshots in the examples are using the following root path <code>/storage</code></p>
+</div>
+<h6>Sonarr</h6>
+<details class="example"><summary>Sonarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><img alt="ds-sonarr-root-folder" src="../images/ds-sonarr-root-folder.png" /></p>
+<p><code>Series</code> =&gt; <code>Add New</code></p>
+<p><img alt="ds-sonarr-add-new" src="../images/ds-sonarr-add-new.png" /></p>
+<p><img alt="ds-sonarr-tv" src="../images/ds-sonarr-tv.png" /></p>
+</details>
+<h6>Radarr</h6>
+<details class="example"><summary>Radarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><img alt="ds-radarr-root-folder" src="../images/ds-radarr-root-folder.png" /></p>
+<p><code>Movies</code> =&gt; <code>Add New</code></p>
+<p><img alt="ds-radarr-add-new" src="../images/ds-radarr-add-new.png" /></p>
+<p><img alt="ds-radarr-movies" src="../images/ds-radarr-movies.png" /></p>
+</details>
+<h6>SABnzbd</h6>
+<details class="example"><summary>SABnzbd Examples</summary><p><code>SABnzbd config</code> =&gt; <code>Folders</code></p>
+<p><img alt="ds-sabnzbd-folders" src="../images/ds-sabnzbd-folders.png" /></p>
+<p><code>SABnzbd config</code> =&gt; <code>Categories</code></p>
+<p><img alt="ds-sabnzbd-categories" src="../images/ds-sabnzbd-categories.png" /></p>
+</details>
+<h6>NZBGet</h6>
+<details class="example"><summary>NZBGet Examples</summary><p><code>Settings</code> =&gt; <code>PATHS</code></p>
+<p><img alt="ds-nzbget-settings-paths" src="../images/ds-nzbget-settings-paths.png" /></p>
+<p><code>Settings</code> =&gt; <code>CATEGORIES</code></p>
+<p><img alt="ds-nzbget-settings-categories" src="../images/ds-nzbget-settings-categories.png" /></p>
+</details>
+<h6>qBittorrent</h6>
+<details class="example"><summary>qBittorrent Examples</summary><p><code>Options</code> =&gt; <code>Downloads</code></p>
+<p><img alt="ds-qbt-options-downloads" src="../images/ds-qbt-options-downloads.png" /></p>
+</details>
+<h6>Deluge</h6>
+<details class="example"><summary>Deluge Example</summary><p><code>Preferences</code> =&gt; <code>Downloads</code></p>
+<p><img alt="ds-deluge-preferences-downloads" src="../images/ds-deluge-preferences-downloads.png" /></p>
+</details>
+<h6>ruTorrent</h6>
+<details class="example"><summary>ruTorrent Examples</summary><p><code>../config/rtorrent/config/rtorrent.rc</code> (path to your appdata)</p>
+<p><img alt="ds-rtorrent.rc" src="../images/ds-rtorrent.rc.png" /></p>
+<p><code>Settings</code> =&gt; <code>Downloads</code></p>
+<p><img alt="ds-rtorrent-settings-downloads" src="../images/ds-rtorrent-settings-downloads.png" /></p>
+<p><code>Settings</code> =&gt; <code>Autotools</code></p>
+<p><img alt="ds-rtorrent-settings-autotools" src="../images/ds-rtorrent-settings-autotools.png" /></p>
+</details>
 </details>
 <h4 id="unraid">UnRaid<a class="headerlink" href="#unraid" title="Permanent link">&para;</a></h4>
 <details class="summary"><summary>UnRaid</summary><div class="admonition note">
@@ -1795,7 +1857,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <h5 id="create-the-main-share">Create the main share<a class="headerlink" href="#create-the-main-share" title="Permanent link">&para;</a></h5>
 <p>For this example I'm using my own setup and preferred share <code>data</code>.</p>
 <p>Go to your dashboard and on the top select <code>shares</code> select <code>add share</code> .</p>
-<p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/image-20201111225320772.png" target="_blank"><img alt="main-share" src="../images/image-20201111225320772.png" /></a></p>
+<p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/unraid-main-share.png" target="_blank"><img alt="unraid-main-share" src="../images/unraid-main-share.png" /></a></p>
 <ol>
 <li>use <code>data</code></li>
 <li>if you got a cache drive and want to make use of it put it on <code>Yes</code> or keep it disabled (Hardlinks will stay in tact if you're using the cache)</li>
@@ -1803,11 +1865,11 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Keep in mind regarding the use of the Cache drive, The mover can't move files that are in use, like  when <code>seeding</code> with torrents. You will need to shutdown your client or stop/pause the torrents so the mover can move them to your Array.</p>
+<p>Keep in mind regarding the use of the Cache drive, The mover can't move files that are in use, like  when seeding with torrents. You will need to shutdown your client or stop/pause the torrents so the mover can move them to your Array.</p>
 <p>With Usenet  you won't have any issues.</p>
 </div>
-<h5 id="folder-structure">Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h5>
-<p>On the host (Unraid) you will need to add /mnt/user before it. <strong>So /mnt/user/data</strong></p>
+<h5 id="folder-structure_1">Folder Structure<a class="headerlink" href="#folder-structure_1" title="Permanent link">&para;</a></h5>
+<p>On the host (Unraid) you will need to add <code>/mnt/user</code> before it. <strong>So <code>/mnt/user/data</code></strong></p>
 <p>The <code>data</code> folder has sub-folders for <code>torrents</code> and <code>usenet</code> and each of these have sub-folders for <code>tv</code>, <code>movie</code> and <code>music</code> downloads to keep things neat. The <code>media</code> folder has nicely named <code>TV</code>, <code>Movies</code> and <code>Music</code> sub-folders, this is your library and what you’d pass to Plex, Emby or JellyFin.</p>
 <p>These subfolders you need to create your self, you can use krusader or winscp to create them or any other way you prefer.</p>
 <div class="highlight"><pre><span></span><code>data
@@ -1833,12 +1895,12 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p><code>Host Path:</code> =&gt; The path on your Unraid Server (The Host).</p>
 <h5 id="torrent-clients">Torrent clients<a class="headerlink" href="#torrent-clients" title="Permanent link">&para;</a></h5>
 <p>qBittorrent, Deluge, ruTorrent</p>
-<p><img alt="unraid-torrent-clients" src="../images/image-20201112201012153.png" /></p>
+<p><img alt="unraid-torrent-clients" src="../images/unraid-torrent-clients.png" /></p>
 <p><code>Container Path:</code> =&gt; <code>/data/torrents</code></p>
 <p><code>Host Path</code>: =&gt; <code>/mnt/user/data/torrents</code></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The reason why we use <code>/data/torrents</code> for the torrent client is because it only needs access to the torrent files. In the torrent software settings, you’ll need to reconfigure paths and you can sort into sub-folders like/data/torrents/{tv|movies|music}.</p>
+<p>The reason why we use <code>/data/torrents</code> for the torrent client is because it only needs access to the torrent files. In the torrent software settings, you’ll need to reconfigure paths and you can sort into sub-folders like <code>/data/torrents/{tv|movies|music}</code>.</p>
 </div>
 <div class="highlight"><pre><span></span><code>data
 └── torrents
@@ -1848,12 +1910,12 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 </code></pre></div>
 <h5 id="usenet-clients">Usenet clients<a class="headerlink" href="#usenet-clients" title="Permanent link">&para;</a></h5>
 <p>NZBGet or SABnzbd</p>
-<p><img alt="unraid-usenet-client" src="../images/image-20201112203013210.png" /></p>
+<p><img alt="unraid-usenet-client" src="../images/unraid-usenet-client.png" /></p>
 <p><code>Container Path:</code> =&gt; <code>/data/usenet</code></p>
 <p><code>Host Path:</code> =&gt; <code>/mnt/user/data/usenet</code></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The reason why we use <code>/data/usenet</code> for the usenet client is because it only needs access to the usenet files. In the usenet software settings, you’ll need to reconfigure paths and you can sort into sub-folders like/data/usenet/{tv|movies|music}.</p>
+<p>The reason why we use <code>/data/usenet</code> for the usenet client is because it only needs access to the usenet files. In the usenet software settings, you’ll need to reconfigure paths and you can sort into sub-folders like <code>/data/usenet/{tv|movies|music}</code>.</p>
 </div>
 <div class="highlight"><pre><span></span><code>data
 └── usenet
@@ -1863,7 +1925,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 </code></pre></div>
 <h5 id="the-arrs">The arr(s)<a class="headerlink" href="#the-arrs" title="Permanent link">&para;</a></h5>
 <p>Sonarr, Radarr and Lidarr</p>
-<p><img alt="unraid-arr" src="../images/image-20201112204406692.png" /></p>
+<p><img alt="unraid-arr" src="../images/unraid-arr.png" /></p>
 <p><code>Container Path:</code> =&gt; <code>/data</code></p>
 <p><code>Host Path:</code> =&gt; <code>/mnt/user/data/</code></p>
 <div class="admonition info">
@@ -1886,7 +1948,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 </code></pre></div>
 <h5 id="media-server">Media Server<a class="headerlink" href="#media-server" title="Permanent link">&para;</a></h5>
 <p>Plex, Emby, JellyFin and Bazarr</p>
-<p><img alt="unraid-media-server" src="../images/image-20201112205218382.png" /></p>
+<p><img alt="unraid-media-server" src="../images/unraid-media-server.png" /></p>
 <p><code>Container Path:</code> =&gt; <code>/data/media</code></p>
 <p><code>Host Path:</code> =&gt; <code>/mnt/user/data/media/</code></p>
 <div class="admonition info">
@@ -1900,7 +1962,8 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
    └── tv
 </code></pre></div>
 <h5 id="final-result">Final Result<a class="headerlink" href="#final-result" title="Permanent link">&para;</a></h5>
-<p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/image-20201112210400294.png" target="_blank"><img alt="final-results" src="../images/image-20201112210400294.png" /></a></p>
+<p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/unraid-final-result.png" target="_blank"><img alt="unraid-final-result" src="../images/unraid-final-result.png" /></a></p>
+<p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
 </details>
 <h4 id="synology">Synology<a class="headerlink" href="#synology" title="Permanent link">&para;</a></h4>
 <details class="summary"><summary>Synology</summary><div class="admonition note">
@@ -1909,7 +1972,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p>This works like 10x faster then the GUI and after adding it shows up in the GUI.</p>
 </div>
 <p>We need to get some information that we need later to setup the docker-compose file.</p>
-<h6 id="puid-and-pgid">PUID and PGID<a class="headerlink" href="#puid-and-pgid" title="Permanent link">&para;</a></h6>
+<h6>PUID and PGID</h6>
 <p>In order for the Docker container to access the shares on the Synology,
 we need to give it the same permissions as your main user who has access to those shares.
 For this we need to figure out the PUID and the PGID of the user having access to your shares.</p>
@@ -1934,7 +1997,7 @@ Remember these values for later use.</p>
 <p class="admonition-title">Attention</p>
 <p>To get Hardlinks and Atomic-Moves working with your Synology you will need to make use of <strong>ONE</strong> share with subfolders.</p>
 </div>
-<h5 id="folder-structure_1">Folder Structure<a class="headerlink" href="#folder-structure_1" title="Permanent link">&para;</a></h5>
+<h5 id="folder-structure_2">Folder Structure<a class="headerlink" href="#folder-structure_2" title="Permanent link">&para;</a></h5>
 <p>For this example we're going to make use of a share called <code>data</code>.</p>
 <p>On the host (Synology) you will need to add <code>/volume1/</code> before it. So <code>/volume1/data</code></p>
 <p>The <code>data</code> folder has sub-folders for <code>torrents</code> and <code>usenet</code> and each of these have sub-folders for <code>tv</code>, <code>movie</code> and <code>music</code> downloads to keep things neat. The <code>media</code> folder has nicely named <code>TV</code>, <code>Movies</code> and <code>Music</code> sub-folders, this is your library and what you’d pass to Plex, Emby or JellyFin.</p>
@@ -2150,45 +2213,45 @@ services:
 </ul>
 <h4 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>Sonarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
-<p><img alt="sonarr-root-folder" src="../images/image-20201111190131842.png" /></p>
+<p><img alt="sonarr-root-folder" src="../images/sonarr-root-folder.png" /></p>
 <p><code>Series</code> =&gt; <code>Add New</code></p>
-<p><img alt="image-20201111190300091" src="../images/image-20201111190300091.png" /></p>
-<p><img alt="image-20201111184955092" src="../images/image-20201111184955092.png" /></p>
+<p><img alt="sonarr-add-new" src="../images/sonarr-add-new.png" /></p>
+<p><img alt="sonarr-tv" src="../images/sonarr-tv.png" /></p>
 </details>
 <h4 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>Radarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
-<p><img alt="radarr-root-folder" src="../images/image-20201111185454928.png" /></p>
+<p><img alt="radarr-root-folder" src="../images/radarr-root-folder.png" /></p>
 <p><code>Movies</code> =&gt; <code>Add New</code></p>
-<p><img alt="image-20201111185158391" src="../images/image-20201111185158391.png" /></p>
-<p><img alt="image-20201111185304391" src="../images/image-20201111185304391.png" /></p>
+<p><img alt="radarr-add-new" src="../images/radarr-add-new.png" /></p>
+<p><img alt="radarr-movies" src="../images/radarr-movies.png" /></p>
 </details>
 <h4 id="sabnzbd-config">SABnzbd config<a class="headerlink" href="#sabnzbd-config" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>SABnzbd Examples</summary><p><code>SABnzbd config</code> =&gt; <code>Folders</code></p>
-<p><img alt="sabnzbd-folders" src="../images/image-20201111190431670.png" /></p>
+<p><img alt="sabnzbd-folders" src="../images/sabnzbd-folders.png" /></p>
 <p><code>SABnzbd config</code> =&gt; <code>Categories</code></p>
-<p><img alt="sabnzbd-categories" src="../images/image-20201111190616235.png" /></p>
+<p><img alt="sabnzbd-categories" src="../images/sabnzbd-categories.png" /></p>
 </details>
 <h4 id="nzbget">NZBGet<a class="headerlink" href="#nzbget" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>NZBGet Examples</summary><p><code>Settings</code> =&gt; <code>PATHS</code></p>
-<p><img alt="settings-paths" src="../images/image-20201111191413616.png" /></p>
+<p><img alt="nzbget-settings-paths" src="../images/nzbget-settings-paths.png" /></p>
 <p><code>Settings</code> =&gt; <code>CATEGORIES</code></p>
-<p><img alt="settings-categories" src="../images/image-20201111191615112.png" /></p>
+<p><img alt="nzbget-settings-categories" src="../images/nzbget-settings-categories.png" /></p>
 </details>
 <h4 id="qbittorrent">qBittorrent<a class="headerlink" href="#qbittorrent" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>qBittorrent Examples</summary><p><code>Options</code> =&gt; <code>Downloads</code></p>
-<p><img alt="options-downloads" src="../images/image-20201111191744466.png" /></p>
+<p><img alt="qbt-options-downloads" src="../images/qbt-options-downloads.png" /></p>
 </details>
 <h4 id="deluge">Deluge<a class="headerlink" href="#deluge" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>Deluge Example</summary><p><code>Preferences</code> =&gt; <code>Downloads</code></p>
-<p><img alt="preferences-downloads" src="../images/image-20201111191831583.png" /></p>
+<p><img alt="deluge-preferences-downloads" src="../images/deluge-preferences-downloads.png" /></p>
 </details>
 <h4 id="rutorrent">ruTorrent<a class="headerlink" href="#rutorrent" title="Permanent link">&para;</a></h4>
 <details class="example"><summary>ruTorrent Examples</summary><p><code>../config/rtorrent/config/rtorrent.rc</code> (path to your appdata)</p>
-<p><img alt="rtorrent.rc" src="../images/image-20201111201032265.png" /></p>
+<p><img alt="rtorrent.rc" src="../images/rtorrent.rc.png" /></p>
 <p><code>Settings</code> =&gt; <code>Downloads</code></p>
-<p><img alt="settings-downloads" src="../images/image-20201111202759459.png" /></p>
+<p><img alt="rtorrent-settings-downloads" src="../images/rtorrent-settings-downloads.png" /></p>
 <p><code>Settings</code> =&gt; <code>Autotools</code></p>
-<p><img alt="settings-autotools" src="../images/image-20201111202945331.png" /></p>
+<p><img alt="rtorrent-settings-autotools" src="../images/rtorrent-settings-autotools.png" /></p>
 </details>
 <hr />
 <p>Big Thnx to <a href="https://github.com/fryfrog" target="_blank">fryfrog</a> for his <a href="https://wiki.servarr.com/Docker_Guide" target="_blank">Docker Guide</a> that I used as basis for this guide.</p>
@@ -2200,7 +2263,7 @@ services:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-21T10:23:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-21</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-21T22:42:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-21</span>
     
   </small>
 </div>
