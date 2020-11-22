@@ -1710,8 +1710,8 @@
 <li>You want to perma seed?</li>
 </ul>
 <p>Then keep reading.</p>
-<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
-<details class="faq"><summary>FAQ</summary><ol>
+<details class="faq"><summary>FAQ</summary><h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
+<ol>
 <li>
 <p>Q: <strong>What are the <code>*arr</code>?</strong></p>
 <ul>
@@ -1739,14 +1739,14 @@
 <li><a href="#unraid">UnRaid</a></li>
 <li><a href="#synology">Synology</a></li>
 </ul>
-<h4 id="dockstarter">DockSTARTer<a class="headerlink" href="#dockstarter" title="Permanent link">&para;</a></h4>
-<details class="summary"><summary>DockSTARTer</summary><div class="admonition note">
+<details class="summary"><summary>DockSTARTer</summary><h4 id="dockstarter">DockSTARTer<a class="headerlink" href="#dockstarter" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>I'm using the default paths in this example, and will keep the other paths unchanged so nothing will break if you make a mistake.</p>
 </div>
 <h5 id="folder-structure">Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h5>
 <p>We're going to use a mounted drive that we're going to use as storage for downloads and your media.
-In this example the mounted drive will be mounted to <code>/mnt/</code> with the following folder structure.</p>
+In this example the mounted drive will be mounted to <code>/mnt/</code> with the followig folder structure.</p>
 <div class="highlight"><pre><span></span><code>storage
 ├── downloads
 |  ├── torrents
@@ -1800,51 +1800,79 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p class="admonition-title">Info</p>
 <p>The screenshots in the examples are using the following root path <code>/storage</code></p>
 </div>
+<details class="example"><summary>Sonarr Examples</summary></details>
 <h6>Sonarr</h6>
-<details class="example"><summary>Sonarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
-<p><img alt="ds-sonarr-root-folder" src="../images/ds-sonarr-root-folder.png" /></p>
-<p><code>Series</code> =&gt; <code>Add New</code></p>
-<p><img alt="ds-sonarr-add-new" src="../images/ds-sonarr-add-new.png" /></p>
-<p><img alt="ds-sonarr-tv" src="../images/ds-sonarr-tv.png" /></p>
-</details>
+<pre><code>`Settings` =&gt; `Media Managemen` =&gt; `Root Folders`
+
+![ds-sonarr-root-folder](images/ds-sonarr-root-folder.png)
+
+`Series` =&gt; `Add New`
+
+![ds-sonarr-add-new](images/ds-sonarr-add-new.png)
+
+![ds-sonarr-tv](images/ds-sonarr-tv.png)
+</code></pre>
+<details class="example"><summary>Radarr Examples</summary></details>
 <h6>Radarr</h6>
-<details class="example"><summary>Radarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
-<p><img alt="ds-radarr-root-folder" src="../images/ds-radarr-root-folder.png" /></p>
-<p><code>Movies</code> =&gt; <code>Add New</code></p>
-<p><img alt="ds-radarr-add-new" src="../images/ds-radarr-add-new.png" /></p>
-<p><img alt="ds-radarr-movies" src="../images/ds-radarr-movies.png" /></p>
-</details>
+<pre><code>`Settings` =&gt; `Media Managemen` =&gt; `Root Folders`
+
+![ds-radarr-root-folder](images/ds-radarr-root-folder.png)
+
+`Movies` =&gt; `Add New`
+
+![ds-radarr-add-new](images/ds-radarr-add-new.png)
+
+![ds-radarr-movies](images/ds-radarr-movies.png)
+</code></pre>
+<details class="example"><summary>SABnzbd Examples</summary></details>
 <h6>SABnzbd</h6>
-<details class="example"><summary>SABnzbd Examples</summary><p><code>SABnzbd config</code> =&gt; <code>Folders</code></p>
-<p><img alt="ds-sabnzbd-folders" src="../images/ds-sabnzbd-folders.png" /></p>
-<p><code>SABnzbd config</code> =&gt; <code>Categories</code></p>
-<p><img alt="ds-sabnzbd-categories" src="../images/ds-sabnzbd-categories.png" /></p>
-</details>
+<pre><code>`SABnzbd config` =&gt; `Folders`
+
+![ds-sabnzbd-folders](images/ds-sabnzbd-folders.png)
+
+`SABnzbd config` =&gt; `Categories`
+
+![ds-sabnzbd-categories](images/ds-sabnzbd-categories.png)
+</code></pre>
+<details class="example"><summary>NZBGet Examples</summary></details>
 <h6>NZBGet</h6>
-<details class="example"><summary>NZBGet Examples</summary><p><code>Settings</code> =&gt; <code>PATHS</code></p>
-<p><img alt="ds-nzbget-settings-paths" src="../images/ds-nzbget-settings-paths.png" /></p>
-<p><code>Settings</code> =&gt; <code>CATEGORIES</code></p>
-<p><img alt="ds-nzbget-settings-categories" src="../images/ds-nzbget-settings-categories.png" /></p>
-</details>
+<pre><code>`Settings` =&gt; `PATHS`
+
+![ds-nzbget-settings-paths](images/ds-nzbget-settings-paths.png)
+
+`Settings` =&gt; `CATEGORIES`
+
+![ds-nzbget-settings-categories](images/ds-nzbget-settings-categories.png)
+</code></pre>
+<details class="example"><summary>qBittorrent Examples</summary></details>
 <h6>qBittorrent</h6>
-<details class="example"><summary>qBittorrent Examples</summary><p><code>Options</code> =&gt; <code>Downloads</code></p>
-<p><img alt="ds-qbt-options-downloads" src="../images/ds-qbt-options-downloads.png" /></p>
-</details>
+<pre><code>`Options` =&gt; `Downloads`
+
+![ds-qbt-options-downloads](images/ds-qbt-options-downloads.png)
+</code></pre>
+<details class="example"><summary>Deluge Example</summary></details>
 <h6>Deluge</h6>
-<details class="example"><summary>Deluge Example</summary><p><code>Preferences</code> =&gt; <code>Downloads</code></p>
-<p><img alt="ds-deluge-preferences-downloads" src="../images/ds-deluge-preferences-downloads.png" /></p>
-</details>
+<pre><code>`Preferences` =&gt; `Downloads`
+
+![ds-deluge-preferences-downloads](images/ds-deluge-preferences-downloads.png)
+</code></pre>
+<details class="example"><summary>ruTorrent Examples</summary></details>
 <h6>ruTorrent</h6>
-<details class="example"><summary>ruTorrent Examples</summary><p><code>../config/rtorrent/config/rtorrent.rc</code> (path to your appdata)</p>
-<p><img alt="ds-rtorrent.rc" src="../images/ds-rtorrent.rc.png" /></p>
-<p><code>Settings</code> =&gt; <code>Downloads</code></p>
-<p><img alt="ds-rtorrent-settings-downloads" src="../images/ds-rtorrent-settings-downloads.png" /></p>
-<p><code>Settings</code> =&gt; <code>Autotools</code></p>
-<p><img alt="ds-rtorrent-settings-autotools" src="../images/ds-rtorrent-settings-autotools.png" /></p>
+<pre><code>`../config/rtorrent/config/rtorrent.rc` (path to your appdata)
+
+![ds-rtorrent.rc](images/ds-rtorrent.rc.png)
+
+`Settings` =&gt; `Downloads`
+
+![ds-rtorrent-settings-downloads](images/ds-rtorrent-settings-downloads.png)
+
+`Settings` =&gt; `Autotools`
+
+![ds-rtorrent-settings-autotools](images/ds-rtorrent-settings-autotools.png)
+</code></pre>
 </details>
-</details>
-<h4 id="unraid">UnRaid<a class="headerlink" href="#unraid" title="Permanent link">&para;</a></h4>
-<details class="summary"><summary>UnRaid</summary><div class="admonition note">
+<details class="summary"><summary>UnRaid</summary><h4 id="unraid">UnRaid<a class="headerlink" href="#unraid" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The first thing you need to do is forget the suggested paths from the Spaceinvader One YouTube Tutorials,</p>
 <p>and don't use the predefined paths from the unraid templates.</p>
@@ -1965,11 +1993,12 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p><a href="https://raw.githubusercontent.com/TRaSH-/Guides/master/docs/Misc/images/unraid-final-result.png" target="_blank"><img alt="unraid-final-result" src="../images/unraid-final-result.png" /></a></p>
 <p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
 </details>
-<h4 id="synology">Synology<a class="headerlink" href="#synology" title="Permanent link">&para;</a></h4>
-<details class="summary"><summary>Synology</summary><div class="admonition note">
+<details class="summary"><summary>Synology</summary><h4 id="synology">Synology<a class="headerlink" href="#synology" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Being I don't have a Synology myself and I kind of hate the Synology GUI for the dockers, I'm doing this with the use of docker-compose.</p>
 <p>This works like 10x faster then the GUI and after adding it shows up in the GUI.</p>
+<p>Thnx to faxity for the initial compose that I used to create the Synology Guide.</p>
 </div>
 <p>We need to get some information that we need later to setup the docker-compose file.</p>
 <h6>PUID and PGID</h6>
@@ -2200,7 +2229,7 @@ services:
 <p class="admonition-title">Info</p>
 <p>Pick one path layout and use it for all of them.</p>
 <p>It doesn't matter if you prefer to use <code>/data</code>, <code>/shared</code>, <code>/storage</code> or whatever.</p>
-<p>The screenshots in the examples are using the following root path <code>/storage</code></p>
+<p>The screenshots in the examples are using the following root path <code>/data</code></p>
 </div>
 <ul>
 <li><a href="#sonarr">Sonarr</a></li>
@@ -2211,42 +2240,42 @@ services:
 <li><a href="#deluge">Deluge</a></li>
 <li><a href="#rutorrent">ruTorrent</a></li>
 </ul>
-<h4 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>Sonarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<details class="example"><summary>Sonarr Examples</summary><h4 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h4>
+<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
 <p><img alt="sonarr-root-folder" src="../images/sonarr-root-folder.png" /></p>
 <p><code>Series</code> =&gt; <code>Add New</code></p>
 <p><img alt="sonarr-add-new" src="../images/sonarr-add-new.png" /></p>
 <p><img alt="sonarr-tv" src="../images/sonarr-tv.png" /></p>
 </details>
-<h4 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>Radarr Examples</summary><p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<details class="example"><summary>Radarr Examples</summary><h4 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">&para;</a></h4>
+<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
 <p><img alt="radarr-root-folder" src="../images/radarr-root-folder.png" /></p>
 <p><code>Movies</code> =&gt; <code>Add New</code></p>
 <p><img alt="radarr-add-new" src="../images/radarr-add-new.png" /></p>
 <p><img alt="radarr-movies" src="../images/radarr-movies.png" /></p>
 </details>
-<h4 id="sabnzbd">SABnzbd<a class="headerlink" href="#sabnzbd" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>SABnzbd Examples</summary><p><code>SABnzbd config</code> =&gt; <code>Folders</code></p>
+<details class="example"><summary>SABnzbd Examples</summary><h4 id="sabnzbd">SABnzbd<a class="headerlink" href="#sabnzbd" title="Permanent link">&para;</a></h4>
+<p><code>SABnzbd config</code> =&gt; <code>Folders</code></p>
 <p><img alt="sabnzbd-folders" src="../images/sabnzbd-folders.png" /></p>
 <p><code>SABnzbd config</code> =&gt; <code>Categories</code></p>
 <p><img alt="sabnzbd-categories" src="../images/sabnzbd-categories.png" /></p>
 </details>
-<h4 id="nzbget">NZBGet<a class="headerlink" href="#nzbget" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>NZBGet Examples</summary><p><code>Settings</code> =&gt; <code>PATHS</code></p>
+<details class="example"><summary>NZBGet Examples</summary><h4 id="nzbget">NZBGet<a class="headerlink" href="#nzbget" title="Permanent link">&para;</a></h4>
+<p><code>Settings</code> =&gt; <code>PATHS</code></p>
 <p><img alt="nzbget-settings-paths" src="../images/nzbget-settings-paths.png" /></p>
 <p><code>Settings</code> =&gt; <code>CATEGORIES</code></p>
 <p><img alt="nzbget-settings-categories" src="../images/nzbget-settings-categories.png" /></p>
 </details>
-<h4 id="qbittorrent">qBittorrent<a class="headerlink" href="#qbittorrent" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>qBittorrent Examples</summary><p><code>Options</code> =&gt; <code>Downloads</code></p>
+<details class="example"><summary>qBittorrent Examples</summary><h4 id="qbittorrent">qBittorrent<a class="headerlink" href="#qbittorrent" title="Permanent link">&para;</a></h4>
+<p><code>Options</code> =&gt; <code>Downloads</code></p>
 <p><img alt="qbt-options-downloads" src="../images/qbt-options-downloads.png" /></p>
 </details>
-<h4 id="deluge">Deluge<a class="headerlink" href="#deluge" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>Deluge Example</summary><p><code>Preferences</code> =&gt; <code>Downloads</code></p>
+<details class="example"><summary>Deluge Example</summary><h4 id="deluge">Deluge<a class="headerlink" href="#deluge" title="Permanent link">&para;</a></h4>
+<p><code>Preferences</code> =&gt; <code>Downloads</code></p>
 <p><img alt="deluge-preferences-downloads" src="../images/deluge-preferences-downloads.png" /></p>
 </details>
-<h4 id="rutorrent">ruTorrent<a class="headerlink" href="#rutorrent" title="Permanent link">&para;</a></h4>
-<details class="example"><summary>ruTorrent Examples</summary><p><code>../config/rtorrent/config/rtorrent.rc</code> (path to your appdata)</p>
+<details class="example"><summary>ruTorrent Examples</summary><h4 id="rutorrent">ruTorrent<a class="headerlink" href="#rutorrent" title="Permanent link">&para;</a></h4>
+<p><code>../config/rtorrent/config/rtorrent.rc</code> (path to your appdata)</p>
 <p><img alt="rtorrent.rc" src="../images/rtorrent.rc.png" /></p>
 <p><code>Settings</code> =&gt; <code>Downloads</code></p>
 <p><img alt="rtorrent-settings-downloads" src="../images/rtorrent-settings-downloads.png" /></p>
@@ -2263,7 +2292,7 @@ services:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-21T23:10:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-21</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-22T09:02:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-22</span>
     
   </small>
 </div>
