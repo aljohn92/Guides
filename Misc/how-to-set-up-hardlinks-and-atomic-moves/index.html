@@ -1281,6 +1281,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#puid-and-pgid" class="md-nav__link">
+    PUID and PGID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#folder-structure_2" class="md-nav__link">
     Folder Structure
   </a>
@@ -1572,6 +1579,13 @@
   
     <nav class="md-nav" aria-label="Synology">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puid-and-pgid" class="md-nav__link">
+    PUID and PGID
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#folder-structure_2" class="md-nav__link">
@@ -1977,7 +1991,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p>Thnx to faxity for the initial compose that I used to create the Synology Guide.</p>
 </div>
 <p>We need to get some information that we need later to setup the docker-compose file.</p>
-<h6>PUID and PGID</h6>
+<h5 id="puid-and-pgid">PUID and PGID<a class="headerlink" href="#puid-and-pgid" title="Permanent link">&para;</a></h5>
 <p>In order for the Docker container to access the shares on the Synology,
 we need to give it the same permissions as your main user who has access to those shares.
 For this we need to figure out the PUID and the PGID of the user having access to your shares.</p>
@@ -2044,7 +2058,7 @@ services:
 # Radarr - https://hotio.dev/containers/radarr/
   radarr:
     container_name: radarr
-    image: ghcr.io/hotio/radarr:nightly
+    image: ghcr.io/hotio/radarr:latest
     restart: unless-stopped
     logging:
       driver: json-file
@@ -2272,7 +2286,7 @@ services:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-27T08:48:40+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-27</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-29T12:38:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-29</span>
     
   </small>
 </div>
