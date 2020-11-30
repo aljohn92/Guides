@@ -771,6 +771,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hq-p2p" class="md-nav__link">
+    HQ-P2P
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1928,6 +1935,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hq-p2p" class="md-nav__link">
+    HQ-P2P
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2024,7 +2038,7 @@ Special thanks to <a href="https://github.com/rg9400" target="_blank">rg9400</a>
 <td><a href="#71-surround">7.1 Surround</a></td>
 <td><a href="#dts-es">DTS-ES</a></td>
 <td><a href="#10-bit">10 Bit</a></td>
-<td></td>
+<td><a href="#streaming-services">Streaming Services</a></td>
 <td><a href="#multi">Multi</a></td>
 </tr>
 <tr>
@@ -2032,7 +2046,7 @@ Special thanks to <a href="https://github.com/rg9400" target="_blank">rg9400</a>
 <td><a href="#91-surround">9.1 Surround</a></td>
 <td><a href="#dts-hd-hra">DTS-HD HRA</a></td>
 <td><a href="#mpeg2">MPEG2</a></td>
-<td></td>
+<td><a href="#dutch-groups">Dutch Groups</a></td>
 <td><a href="#freeleech">FreeLeech</a></td>
 </tr>
 <tr>
@@ -2040,8 +2054,8 @@ Special thanks to <a href="https://github.com/rg9400" target="_blank">rg9400</a>
 <td></td>
 <td><a href="#dts-hd-ma">DTS-HD MA</a></td>
 <td></td>
+<td><a href="#hq-p2p">HQ-P2P</a></td>
 <td></td>
-<td><a href="#dutch-groups">Dutch Groups</a></td>
 </tr>
 <tr>
 <td align="left"></td>
@@ -2049,7 +2063,7 @@ Special thanks to <a href="https://github.com/rg9400" target="_blank">rg9400</a>
 <td><a href="#truehd-not-atmos">TrueHD (not ATMOS)</a></td>
 <td></td>
 <td></td>
-<td><a href="#streaming-services">Streaming Services</a></td>
+<td></td>
 </tr>
 <tr>
 <td align="left"></td>
@@ -2934,7 +2948,7 @@ It's all really dependent on specific situations for different people</p>
 <hr />
 <h2 id="dolby-vision">Dolby Vision<a class="headerlink" href="#dolby-vision" title="Permanent link">&para;</a></h2>
 <details class="example"><summary>json</summary><div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dolby Vision&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DoVi&quot;</span><span class="p">,</span>
     <span class="nt">&quot;includeCustomFormatWhenRenaming&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;specifications&quot;</span><span class="p">:</span> <span class="p">[{</span>
         <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dolby Vision&quot;</span><span class="p">,</span>
@@ -4432,6 +4446,52 @@ It's all really dependent on specific situations for different people</p>
 <span class="p">}</span>
 </code></pre></div>
 </details>
+<hr />
+<h2 id="hq-p2p">HQ-P2P<a class="headerlink" href="#hq-p2p" title="Permanent link">&para;</a></h2>
+<p>A collection of P2P groups that are knows for their high quality releases</p>
+<details class="example"><summary>json</summary><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;HQ-P2P&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;includeCustomFormatWhenRenaming&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;specifications&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;[BLOCK1]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ReleaseTitleSpecification&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;-BMF|-decibeL|\\bD-Z0N3\\b|\\bFTW-HD\\b|-HiFi|-NCmt|-OISTiLe|-TDD|\\bZQ\\b&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;[BLOCK2]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ReleaseTitleSpecification&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;-HiSD|-NTb|-ift|-geek|-tnp|-ncmt|-pter|-bbq&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;[BLOCK3]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ReleaseTitleSpecification&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;-CRiSC|-CtrlHD|-DON|\\b-EA\\b|-EbP|-LolHD|-SbR|-TayTo|-VietHD&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;[Remux Groups]&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ReleaseTitleSpecification&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;-FraMeSToR|-EPSiLON|//bKRaLiMaRKo//b&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
                 
                   
                     
@@ -4440,7 +4500,7 @@ It's all really dependent on specific situations for different people</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-29T00:38:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-29</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-30T18:49:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-30</span>
     
   </small>
 </div>
