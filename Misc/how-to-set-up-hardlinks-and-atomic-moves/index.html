@@ -1368,6 +1368,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#native" class="md-nav__link">
+    Native
+  </a>
+  
+    <nav class="md-nav" aria-label="Native">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_4" class="md-nav__link">
+    Folder Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breakdown-of-the-folder-structure_1" class="md-nav__link">
+    Breakdown of the Folder Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1716,6 +1743,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#native" class="md-nav__link">
+    Native
+  </a>
+  
+    <nav class="md-nav" aria-label="Native">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_4" class="md-nav__link">
+    Folder Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breakdown-of-the-folder-structure_1" class="md-nav__link">
+    Breakdown of the Folder Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1849,6 +1903,7 @@
 <li><a href="#unraid">UnRaid</a></li>
 <li><a href="#synology">Synology</a></li>
 <li><a href="#docker">Docker</a></li>
+<li><a href="#native">Bare Metal (Native)</a></li>
 </ul>
 <details class="summary"><summary>DockSTARTer</summary><h4 id="dockstarter">DockSTARTer<a class="headerlink" href="#dockstarter" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
@@ -2559,6 +2614,80 @@ services:
 <p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differene.</p>
 <p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
 </details>
+<details class="summary"><summary>Bare Metal (Native)</summary><h4 id="native">Native<a class="headerlink" href="#native" title="Permanent link">&para;</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>It doesn't really matter which path you use for your media and appdata,</p>
+<p>the only thing you should  avoid is <code>/home</code>.</p>
+<p>Because user folders in <code>/home</code> are expected to have some restrictive permissions.</p>
+<p>It just could end up creating a permissions mess, so it's better to just avoid entirely.</p>
+</div>
+<h5 id="folder-structure_4">Folder Structure<a class="headerlink" href="#folder-structure_4" title="Permanent link">&para;</a></h5>
+<p>For this example we're going to make use of a share called <code>data</code>.</p>
+<p>The <code>data</code> folder has sub-folders for <code>torrents</code> and <code>usenet</code> and each of these have sub-folders for <code>tv</code>, <code>movie</code> and <code>music</code> downloads to keep things neat. The <code>media</code> folder has nicely named <code>TV</code>, <code>Movies</code> and <code>Music</code> sub-folders, this is your library and what you’d pass to Plex, Emby or JellyFin.</p>
+<div class="highlight"><pre><span></span><code>data
+├── torrents
+│  ├── movies
+│  ├── music
+│  └── tv
+├── usenet
+│  ├── movies
+│  ├── music
+│  └── tv
+└── media
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+<details class="summary"><summary>Breakdown of the Folder Structure</summary><h5 id="breakdown-of-the-folder-structure_1">Breakdown of the Folder Structure<a class="headerlink" href="#breakdown-of-the-folder-structure_1" title="Permanent link">&para;</a></h5>
+<h6>Torrent clients</h6>
+<p>qBittorrent, Deluge, ruTorrent</p>
+<p>The reason why we use <code>/data/torrents</code> for the torrent client is because it only needs access to the torrent files. In the torrent software settings, you’ll need to reconfigure paths and you can sort into sub-folders like <code>/data/torrents/{tv|movies|music}</code>.</p>
+<div class="highlight"><pre><span></span><code>data
+└── torrents
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+<h6>Usenet clients</h6>
+<p>NZBGet or SABnzbd</p>
+<p>The reason why we use <code>/data/usenet</code> for the usenet client is because it only needs access to the usenet files. In the usenet software settings, you’ll need to reconfigure paths and you can sort into sub-folders like <code>/data/usenet/{tv|movies|music}</code>.</p>
+<div class="highlight"><pre><span></span><code>data
+└── usenet
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+<h6>The arr(s)</h6>
+<p>Sonarr, Radarr and Lidarr</p>
+<p>Sonarr, Radarr and Lidarr get's access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
+<div class="highlight"><pre><span></span><code>data
+├── torrents
+│  ├── movies
+│  ├── music
+│  └── tv
+├── usenet
+│  ├── movies
+│  ├── music
+│  └── tv
+└── media
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+<h6>Media Server</h6>
+<p>Plex, Emby, JellyFin and Bazarr</p>
+<p>Plex, Emby, JellyFin and Bazarr only needs access to your media library, which can have any number of sub folders like Movies, Kids Movies, TV, Documentary TV and/or Music as sub folders.</p>
+<div class="highlight"><pre><span></span><code>data
+└── media
+   ├── movies
+   ├── music
+   └── tv
+</code></pre></div>
+</details>
+<p><em>I'm using lower case on all folder on  purpose, being Linux is case sensitive.</em></p>
+<p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
+</details>
 <hr />
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -2632,7 +2761,7 @@ services:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-02T20:15:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-02</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-02T21:43:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-02</span>
     
   </small>
 </div>
