@@ -2189,12 +2189,29 @@ Remember these values for later use.</p>
 </code></pre></div>
 <p><em>I'm using lower case on all folder on  purpose, being Linux is case sensitive.</em></p>
 <h5 id="appdata">Appdata<a class="headerlink" href="#appdata" title="Permanent link">&para;</a></h5>
-<p>Your appdata will be stored in <code>/volume1/docker/{appname}</code>
-These folders you need to create your self.</p>
+<p>Your appdata will be stored in <code>/volume1/docker/appdata/{appname}</code>
+These <code>{appname}</code> sub folders you need to create your self. (<em>This is a limitation of the Synology</em>)</p>
+<div class="highlight"><pre><span></span><code>sudo mkdir /docker/appdata
+<span class="nb">cd</span> /docker/appdata
+sudo mkdir radarr sonarr bazarr nzbget qbittorrent plex tautulli
+</code></pre></div>
+<p>So your appdata folder will look like this.</p>
+<div class="highlight"><pre><span></span><code>docker
+└── appdata
+   ├── radarr
+   ├── sonarr
+   ├── bazarr
+   ├── nzbget
+   ├── qbittorrent
+   ├── plex
+   └── tautulli
+</code></pre></div>
 <p>A docker-compose file exist of 1 file that holds all the needed info of all your docker containers.
 this makes it easy to maintain and compare paths.</p>
-<p>Download this <a href="https://gist.github.com/TRaSH-/6eddbc251b54b22acffba6baf5cbb5ed">synology-docker-compose.yml</a> to your <code>/volume1/docker/</code> location so you got your important stuff together.
-This docker-compose file will have the following docker containers included.</p>
+<p>Download this <a href="https://gist.github.com/TRaSH-/6eddbc251b54b22acffba6baf5cbb5ed">docker-compose.yml</a> to your <code>/volume1/docker/appdata</code> location so you got your important stuff together.</p>
+<div class="highlight"><pre><span></span><code>sudo wget https://gist.githubusercontent.com/TRaSH-/6eddbc251b54b22acffba6baf5cbb5ed/raw/ca91114e74d5669ed3ede8a379f510acc54865ad/docker-compose.yml
+</code></pre></div>
+<p>This docker-compose file will have the following docker containers included.</p>
 <ul>
 <li>Radarr</li>
 <li>Sonarr</li>
@@ -2202,154 +2219,9 @@ This docker-compose file will have the following docker containers included.</p>
 <li>NZBGet</li>
 <li>qBittorent</li>
 <li>Plex</li>
+<li>Tautulli</li>
 <li>Watchtower (automatic docker container updater)</li>
 </ul>
-<p>I've added at the end of the Synology guide a few examples you can add/replace.</p>
-<details class="example"><summary>synology-docker-compose.yml</summary><div class="highlight"><pre><span></span><code>version: &quot;3.2&quot;
-services:
-# Radarr - https://hotio.dev/containers/radarr/
-  radarr:
-    container_name: radarr
-    image: ghcr.io/hotio/radarr:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 7878:7878
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /volume1/docker/radarr:/config # Change &quot;/volume1/docker/radarr&quot; with the path your config will be.
-      - /volume1/data:/data # Change &quot;/volume1/data&quot; with the path where your library + torrent/usenet downloads both are.
-# Sonarr - https://hotio.dev/containers/sonarr/
-  sonarr:
-    container_name: sonarr
-    image: ghcr.io/hotio/sonarr:nightly
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 8989:8989
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /volume1/docker/sonarr:/config # Change &quot;/volume1/docker/sonarr&quot; with the path your config will be.
-      - /volume1/data:/data # Change &quot;/volume1/data&quot; with the path where your library + torrent/usenet downloads both are.
-# Bazarr - https://hotio.dev/containers/bazarr/
-  bazarr:
-    container_name: bazarr
-    image: ghcr.io/hotio/bazarr:nightly
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 6767:6767
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /volume1/docker/bazarr:/config # Change &quot;/volume1/docker/bazarr&quot; with the path your config will be.
-      - /volume1/data/media:/data/media # Change &quot;/volume1/data/media&quot; with the path where your library are(sonarr+radarr).
-# NZBGet - https://hotio.dev/containers/nzbget/
-  nzbget:
-    container_name: nzbget
-    image: ghcr.io/hotio/nzbget:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 6789:6789/tcp
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /volume1/docker/nzbget:/config:rw # Change &quot;/volume1/docker/nzbget&quot; with the path your config will be.
-      - /volume1/data/usenet:/data/usenet:rw # Change &quot;/volume1/data/usenet&quot; with the path your usenet data ends up in.
-# qBittorrent - https://docs.linuxserver.io/images/docker-qbittorrent
-  qbittorrent:
-    container_name: qbittorrent
-    image: ghcr.io/linuxserver/qbittorrent
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 6881:6881
-      - 6881:6881/udp
-      - 8080:8080
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-      - UMASK_SET=022
-      - WEBUI_PORT=8080
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /volume1/docker/qbittorrent:/config:rw # Change &quot;/volume1/docker/qbittorrent&quot; with the path your config will be.
-      - /volume1/data/torrents:/data/torrents:rw # Change &quot;/volume1/data/torrents&quot; with the path your usenet data ends up in.
-# Plex - https://hotio.dev/containers/plex/
-  plex:
-    container_name: plex
-    image: ghcr.io/hotio/plex
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 32400:32400
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-      - UMASK=002
-      - ARGS=
-      - DEBUG=no
-      - PLEX_CLAIM=
-      - ADVERTISE_IP=
-      - ALLOWED_NETWORKS=
-      - PLEX_PASS=no
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /volume1/docker/plex:/config:rw # Change &quot;/volume1/docker/plex&quot; with the path your config will be.
-      - /volume1/data/media:/data/media:rw # Change &quot;/volume1/data/media&quot; with the path where your library are(sonarr+radarr).
-      - /tmp:/transcode:rw
-# automatic docker container updater - https://github.com/containrrr/watchtower
-  watchtower:
-    container_name: watchtower
-    image: containrrr/watchtower
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    environment:
-      - PUID=1026 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=100 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-      - UMASK=022
-      - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_INCLUDE_STOPPED=false
-      - WATCHTOWER_MONITOR_ONLY=false
-      - WATCHTOWER_SCHEDULE=0 0 4 * * * # use cron to change update interval set at 4am.
-      - WATCHTOWER_TIMEOUT=10s
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-</code></pre></div>
-</details>
 <h5 id="changes-you-need-to-do">Changes you need to do<a class="headerlink" href="#changes-you-need-to-do" title="Permanent link">&para;</a></h5>
 <ol>
 <li>PUID/PGID (this info you got earlier)</li>
@@ -2360,10 +2232,17 @@ services:
 <p>make sure you deleted/removed all your existing dockers from the GUI and also remove your native installs of these applications !!!</p>
 </div>
 <h5 id="run-the-docker-compose">Run the Docker Compose<a class="headerlink" href="#run-the-docker-compose" title="Permanent link">&para;</a></h5>
+<p>When you did all the above steps you only need to type the following in your <code>/volume1/docker/appdata</code></p>
 <div class="highlight"><pre><span></span><code>sudo docker-compose up -d
 </code></pre></div>
 <p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differene.</p>
 <p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you need to do any changes only edit the <code>docker-compose.yml</code> file and activate the changes when you type <code>sudo docker-compose up -d</code> again.</p>
+<p>Any changes you do/did in the GUI will be reverted when you run the docker-compose.</p>
+<p>Just don't use the GUI</p>
+</div>
 </details>
 <details class="summary"><summary>Docker</summary><h4 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
@@ -2447,8 +2326,11 @@ services:
 These folders you need to create your self.</p>
 <p>A docker-compose file exist of 1 file that holds all the needed info of all your docker containers.
 this makes it easy to maintain and compare paths.</p>
-<p>Download this <a href="https://gist.github.com/TRaSH-/73a2250c2645dfe1c97c61bb5fc46d59">docker-compose.yml</a> to your <code>/docker/</code> location so you got your important stuff together.
-This docker-compose file will have the following docker containers included.</p>
+<p>Download this <a href="https://gist.github.com/TRaSH-/73a2250c2645dfe1c97c61bb5fc46d59">docker-compose.yml</a> to your <code>/docker/</code> location so you got your important stuff together.</p>
+<p>CD to your <code>/docker</code> folder and use the following command to download it.</p>
+<div class="highlight"><pre><span></span><code>sudo wget https://gist.githubusercontent.com/TRaSH-/73a2250c2645dfe1c97c61bb5fc46d59/raw/b5010e038709f6cc39bba08732581bc437256971/docker-compose.yml
+</code></pre></div>
+<p>This docker-compose file will have the following docker containers included.</p>
 <ul>
 <li>Radarr</li>
 <li>Sonarr</li>
@@ -2456,153 +2338,9 @@ This docker-compose file will have the following docker containers included.</p>
 <li>NZBGet</li>
 <li>qBittorent</li>
 <li>Plex</li>
+<li>Tautulli</li>
 <li>Watchtower (automatic docker container updater)</li>
 </ul>
-<details class="example"><summary>docker-compose.yml</summary><div class="highlight"><pre><span></span><code>version: &quot;3.2&quot;
-services:
-# Radarr - https://hotio.dev/containers/radarr/
-  radarr:
-    container_name: radarr
-    image: ghcr.io/hotio/radarr:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 7878:7878
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/radarr:/config # Change &quot;/docker/appdata/radarr&quot; with the path your config will be.
-      - /data:/data # Change &quot;/data&quot; with the path where your library + torrent/usenet downloads both are.
-# Sonarr - https://hotio.dev/containers/sonarr/
-  sonarr:
-    container_name: sonarr
-    image: ghcr.io/hotio/sonarr:nightly
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 8989:8989
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/sonarr:/config # Change &quot;/docker/appdata/sonarr&quot; with the path your config will be.
-      - /data:/data # Change &quot;/data&quot; with the path where your library + torrent/usenet downloads both are.
-# Bazarr - https://hotio.dev/containers/bazarr/
-  bazarr:
-    container_name: bazarr
-    image: ghcr.io/hotio/bazarr:nightly
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 6767:6767
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/bazarr:/config # Change &quot;/docker/appdata/bazarr&quot; with the path your config will be.
-      - /data/media:/data/media # Change &quot;/data/media&quot; with the path where your library are(sonarr+radarr).
-# NZBGet - https://hotio.dev/containers/nzbget/
-  nzbget:
-    container_name: nzbget
-    image: ghcr.io/hotio/nzbget:latest
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 6789:6789/tcp
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/nzbget:/config:rw # Change &quot;/docker/appdata/nzbget&quot; with the path your config will be.
-      - /data/usenet:/data/usenet:rw # Change &quot;/data/usenet&quot; with the path your usenet data ends up in.
-# qBittorrent - https://docs.linuxserver.io/images/docker-qbittorrent
-  qbittorrent:
-    container_name: qbittorrent
-    image: ghcr.io/linuxserver/qbittorrent
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 6881:6881
-      - 6881:6881/udp
-      - 8080:8080
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-      - UMASK_SET=022
-      - WEBUI_PORT=8080
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/qbittorrent:/config:rw # Change &quot;/docker/appdata/qbittorrent&quot; with the path your config will be.
-      - /data/torrents:/data/torrents:rw # Change &quot;/data/torrents&quot; with the path your usenet data ends up in.
-# Plex - https://hotio.dev/containers/plex/
-  plex:
-    container_name: plex
-    image: ghcr.io/hotio/plex
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    ports:
-      - 32400:32400
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-      - UMASK=002
-      - ARGS=
-      - DEBUG=no
-      - PLEX_CLAIM=
-      - ADVERTISE_IP=
-      - ALLOWED_NETWORKS=
-      - PLEX_PASS=no
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /docker/appdata/plex:/config:rw # Change &quot;/docker/appdata/plex&quot; with the path your config will be.
-      - /data/media:/data/media:rw # Change &quot;/data/media&quot; with the path where your library are(sonarr+radarr).
-      - /tmp:/transcode:rw
-# automatic docker container updater - https://github.com/containrrr/watchtower
-  watchtower:
-    container_name: watchtower
-    image: containrrr/watchtower
-    restart: unless-stopped
-    logging:
-      driver: json-file
-    network_mode: bridge
-    environment:
-      - PUID=1000 # you must find out your PUID through SSH, type in terminal: id $user
-      - PGID=1000 # you must find out your PGID through SSH, type in terminal: id $user
-      - TZ=Europe/Amsterdam # Change to your timezone
-      - UMASK=022
-      - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_INCLUDE_STOPPED=false
-      - WATCHTOWER_MONITOR_ONLY=false
-      - WATCHTOWER_SCHEDULE=0 0 4 * * * # use cron to change update interval set at 4am.
-      - WATCHTOWER_TIMEOUT=10s
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-</code></pre></div>
-</details>
 <h5 id="changes-you-need-to-do_1">Changes you need to do<a class="headerlink" href="#changes-you-need-to-do_1" title="Permanent link">&para;</a></h5>
 <ol>
 <li>Change the PUID/PGID.</li>
@@ -2761,7 +2499,7 @@ services:
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-02T21:43:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-02</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-06T17:32:09+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-06</span>
     
   </small>
 </div>
