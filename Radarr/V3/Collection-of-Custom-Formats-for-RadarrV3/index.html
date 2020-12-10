@@ -778,6 +778,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7201080p-no-x265" class="md-nav__link">
+    720/1080p no x265
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1942,6 +1949,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7201080p-no-x265" class="md-nav__link">
+    720/1080p no x265
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2055,7 +2069,7 @@ Special thanks to <a href="https://github.com/rg9400" target="_blank">rg9400</a>
 <td><a href="#dts-hd-ma">DTS-HD MA</a></td>
 <td></td>
 <td><a href="#hq-p2p">HQ-P2P</a></td>
-<td></td>
+<td><a href="#7201080p-no-x265">720/1080p no x265</a></td>
 </tr>
 <tr>
 <td align="left"></td>
@@ -2294,6 +2308,12 @@ The catch is if you want best quality x265, you need source quality files, so yo
 If you want maximum compatibility and the option to change your files to something else later, then x264.
 It's all really dependent on specific situations for different people</p>
 </div>
+<p>It's a shame that most x265 groups microsize the releases or use the x264 as source what results in low quality releases. And the few groups that do use the correct source suffer from it.</p>
+<p>So I created my own golden rule.</p>
+<ul>
+<li>720/1080p =&gt; x264</li>
+<li>2160p/4k =&gt; x265</li>
+</ul>
 <h3 id="some-extra-info-about-4kx265">Some extra info about 4K/X265<a class="headerlink" href="#some-extra-info-about-4kx265" title="Permanent link">&para;</a></h3>
 <p><a href="https://forums.plex.tv/t/plex-4k-transcoding-and-you-aka-the-rules-of-4k-a-faq/378203">4k, transcoding, and you - aka the rules of 4k - a FAQ</a> - Plex.tv</p>
 <ol>
@@ -4492,6 +4512,67 @@ It's all really dependent on specific situations for different people</p>
 <span class="p">}</span>
 </code></pre></div>
 </details>
+<hr />
+<h2 id="7201080p-no-x265">720/1080p no x265<a class="headerlink" href="#7201080p-no-x265" title="Permanent link">&para;</a></h2>
+<p>This blocks/ignores 720/1080p releases that are encoded in x265</p>
+<p>You will need to add the following to your new Custom Format when created in your Quality Profile (<code>Setting</code> =&gt; <code>Profiles</code>) and then set the score to <code>-1000</code></p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>x265 is good for for 4k stuff or 1080p if they used the the remuxes as source.
+If the media isn't source quality/remux, then there will be a loss of quality every time.
+Also, once you go x265, typically that file is done.
+It can't be changed to something else without a huge loss of quality.</p>
+<p>Something like 95% of video files are x264 and have much better direct play support.
+If you have more than a couple users,
+you will notice much more transcoding.
+Just depends on your priorities.</p>
+<p>So basically if you are storage poor and just need to save space, use x265.
+The catch is if you want best quality x265, you need source quality files, so you still have huge file sizes.
+If you want maximum compatibility and the option to change your files to something else later,
+then x264.
+It's all really dependent on specific situations for different people</p>
+</div>
+<p>It's a shame that most x265 groups microsize the releases or use the x264 as source what results in low quality releases. And the few groups that do use the correct source suffer from it.</p>
+<p>So I created my own golden rule.</p>
+<ul>
+<li>720/1080p =&gt; x264</li>
+<li>2160p/4k =&gt; x265</li>
+</ul>
+<details class="example"><summary>json</summary><div class="highlight"><pre><span></span><code><span class="p">{</span>
+ <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;720/1080p != x265&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;includeCustomFormatWhenRenaming&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+ <span class="nt">&quot;specifications&quot;</span><span class="p">:</span> <span class="p">[</span>
+   <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;720p&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ResolutionSpecification&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">720</span>
+     <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;1080p&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ResolutionSpecification&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1080</span>
+     <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;x265/HEVC&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;implementation&quot;</span><span class="p">:</span> <span class="s2">&quot;ReleaseTitleSpecification&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;negate&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;[xh]\\.?265|\\bHEVC(\\b|\\d)&quot;</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
                 
                   
                     
@@ -4500,7 +4581,7 @@ It's all really dependent on specific situations for different people</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-06T14:44:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-10T20:02:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-10</span>
     
   </small>
 </div>
