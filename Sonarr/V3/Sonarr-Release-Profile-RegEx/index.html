@@ -668,19 +668,6 @@
     Final Results
   </a>
   
-    <nav class="md-nav" aria-label="Final Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-x265" class="md-nav__link">
-    Why Not x265
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -1323,19 +1310,6 @@
     Final Results
   </a>
   
-    <nav class="md-nav" aria-label="Final Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-not-x265" class="md-nav__link">
-    Why Not x265
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -1389,13 +1363,13 @@ The proper 640Kbps DD+5.1 audio might appear a few hours later or a few months, 
 <hr />
 <h2 id="propers-and-repacks">Propers and Repacks<a class="headerlink" href="#propers-and-repacks" title="Permanent link">&para;</a></h2>
 <p>First we're need to make sure a P2P release isn't being replaced by a Scene Repack/Proper release !</p>
-<p><img alt="media management" src="../images/media_man.png" /></p>
+<p><img alt="rp-settings-media-management-proper" src="../images/rp-settings-media-management-proper.png" /></p>
 <p>Settings =&gt; <code>Media Management</code>
 Where we going to set it to <code>Do not Prefer</code></p>
 <p>Then we navigate in Sonarr to the Settings =&gt;  <code>Profiles</code></p>
-<p><img alt="profiles" src="../images/profiles.png" /></p>
+<p><img alt="rp-settings-profiles" src="../images/rp-settings-profiles.png" /></p>
 <p>Then you will get a popup screen that will look like this:</p>
-<p><img alt="release profile" src="../images/release_profile.png" /></p>
+<p><img alt="rp-release-profile" src="../images/rp-release-profile.png" /></p>
 <p><code>Must Contain</code> =&gt; add words that the release name <strong>MUST HAVE!</strong></p>
 <p><code>Must Not Contain</code> =&gt; add words that the release name <strong>MUST NOT HAVE AND SO TO BE IGNORE!</strong></p>
 <p><code>Preferred</code> =&gt; add words you prefer with a certain score what you prefer more or upgrade.</p>
@@ -1406,17 +1380,17 @@ Where we going to set it to <code>Do not Prefer</code></p>
 <h2 id="scores">Scores<a class="headerlink" href="#scores" title="Permanent link">&para;</a></h2>
 <h3 id="release-source-streaming-service">Release Source (Streaming Service)<a class="headerlink" href="#release-source-streaming-service" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Preferred (3)</span>
-<span class="o">[</span><span class="m">100</span><span class="o">]</span>   /<span class="o">(</span>amzn<span class="p">|</span>amazon<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">100</span><span class="o">]</span>   /<span class="o">(</span>atvp<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">100</span><span class="o">]</span>   /<span class="o">(</span>hmax<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">90</span><span class="o">]</span>   /<span class="o">(</span>dsnp<span class="p">|</span>dsny<span class="p">|</span>disney<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">90</span><span class="o">]</span>   /<span class="o">(</span>nf<span class="p">|</span>netflix<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">90</span><span class="o">]</span>   /<span class="o">(</span>qibi<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">85</span><span class="o">]</span>   /<span class="o">(</span>hulu<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>dcu<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>hbo<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>red<span class="o">)</span>.?web.?dl/i
-<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>it<span class="o">)</span>.?web.?dl/i
+<span class="o">[</span><span class="m">100</span><span class="o">]</span>   /<span class="o">(</span>amzn<span class="p">|</span>amazon<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">100</span><span class="o">]</span>   /<span class="o">(</span>atvp<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">100</span><span class="o">]</span>   /<span class="o">(</span>hmax<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">90</span><span class="o">]</span>   /<span class="o">(</span>dsnp<span class="p">|</span>dsny<span class="p">|</span>disney<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">90</span><span class="o">]</span>   /<span class="o">(</span>nf<span class="p">|</span>netflix<span class="o">)</span>.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">90</span><span class="o">]</span>   /<span class="o">(</span>qibi<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">85</span><span class="o">]</span>   /<span class="o">(</span>hulu<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>dcu<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>hbo<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>red<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
+<span class="o">[</span><span class="m">75</span><span class="o">]</span>   /<span class="o">(</span>it<span class="o">)</span>.?web.?<span class="o">(</span>dl<span class="p">|</span>rip<span class="o">)</span>/i
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1431,18 +1405,18 @@ Probably doesn’t happen if cutoff is met, but for anything that is unmet or an
 </div>
 <h3 id="p2p-low-quality-scene-groups">P2P + Low Quality Scene Groups<a class="headerlink" href="#p2p-low-quality-scene-groups" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Must Not Contain (2)</span>
-/<span class="o">(</span>x<span class="p">|</span>h<span class="o">)</span><span class="se">\.</span>?265/i, hevc
+/<span class="o">(</span>?<span class="o">=(</span><span class="m">1080</span><span class="p">|</span><span class="m">720</span><span class="o">))</span>.*<span class="o">((</span>x<span class="p">|</span>h<span class="o">)</span><span class="m">265</span><span class="p">|</span>hevc<span class="o">)</span>/i
 
 <span class="c1"># Preferred (3)</span>
-<span class="o">[</span><span class="m">80</span><span class="o">]</span>   /<span class="o">(</span>-deflate<span class="p">|</span>-inflate<span class="o">)</span>/i
-<span class="o">[</span><span class="m">50</span><span class="o">]</span>   /<span class="o">(</span>-AJP69<span class="p">|</span>-BTN<span class="p">|</span>-CasStudio<span class="p">|</span>-CtrlHD<span class="p">|</span>-KiNGS<span class="o">)</span>/i
-<span class="o">[</span><span class="m">50</span><span class="o">]</span>   /<span class="o">(</span>-monkee<span class="p">|</span>-NTb<span class="p">|</span>-NTG<span class="p">|</span>-QOQ<span class="p">|</span>-RTN<span class="o">)</span>/i
-<span class="o">[</span><span class="m">50</span><span class="o">]</span>   /<span class="o">(</span>-TOMMY<span class="p">|</span>-ViSUM<span class="p">|</span>-T6D<span class="o">)</span>/i
-<span class="o">[</span><span class="m">25</span><span class="o">]</span>   /<span class="o">(</span>-BTW<span class="p">|</span>-Chotab<span class="p">|</span>-CiT<span class="p">|</span>-DEEP<span class="p">|</span>-iJP<span class="p">|</span>-iT00NZ<span class="o">)</span>/i
-<span class="o">[</span><span class="m">25</span><span class="o">]</span>   /<span class="o">(</span>-LAZY<span class="p">|</span>-NYH<span class="p">|</span>-SA89<span class="p">|</span>-SIGMA<span class="p">|</span>-TEPES<span class="p">|</span>-TVSmash<span class="o">)</span>/i
-<span class="o">[</span><span class="m">25</span><span class="o">]</span>   /<span class="o">(</span>-SDCC<span class="p">|</span>-iKA<span class="p">|</span>-iJP<span class="p">|</span>-Cinefeel<span class="p">|</span>-SPiRiT<span class="p">|</span>-FC<span class="o">)</span>/i
-<span class="o">[</span><span class="m">25</span><span class="o">]</span>   /<span class="o">(</span>-JETIX<span class="p">|</span>-Coo7<span class="p">|</span>-WELP<span class="p">|</span>-KiMCHI<span class="p">|</span>-BLUTONiUM<span class="o">)</span>/i
-<span class="o">[</span><span class="m">25</span><span class="o">]</span>   /<span class="o">(</span>-orbitron<span class="p">|</span>-ETHiCS<span class="p">|</span>-RTFM<span class="p">|</span>-PSiG<span class="p">|</span>-MZABI<span class="o">)</span>/i
+<span class="o">[</span><span class="m">180</span><span class="o">]</span>   /<span class="o">(</span>-deflate<span class="p">|</span>-inflate<span class="o">)</span>/i
+<span class="o">[</span><span class="m">150</span><span class="o">]</span>   /<span class="o">(</span>-AJP69<span class="p">|</span>-BTN<span class="p">|</span>-CasStudio<span class="p">|</span>-CtrlHD<span class="p">|</span>-KiNGS<span class="o">)</span>/i
+<span class="o">[</span><span class="m">150</span><span class="o">]</span>   /<span class="o">(</span>-monkee<span class="p">|</span>-NTb<span class="p">|</span>-NTG<span class="p">|</span>-QOQ<span class="p">|</span>-RTN<span class="o">)</span>/i
+<span class="o">[</span><span class="m">150</span><span class="o">]</span>   /<span class="o">(</span>-TOMMY<span class="p">|</span>-ViSUM<span class="p">|</span>-T6D<span class="o">)</span>/i
+<span class="o">[</span><span class="m">125</span><span class="o">]</span>   /<span class="o">(</span>-BTW<span class="p">|</span>-Chotab<span class="p">|</span>-CiT<span class="p">|</span>-DEEP<span class="p">|</span>-iJP<span class="p">|</span>-iT00NZ<span class="o">)</span>/i
+<span class="o">[</span><span class="m">125</span><span class="o">]</span>   /<span class="o">(</span>-LAZY<span class="p">|</span>-NYH<span class="p">|</span>-SA89<span class="p">|</span>-SIGMA<span class="p">|</span>-TEPES<span class="p">|</span>-TVSmash<span class="o">)</span>/i
+<span class="o">[</span><span class="m">125</span><span class="o">]</span>   /<span class="o">(</span>-SDCC<span class="p">|</span>-iKA<span class="p">|</span>-iJP<span class="p">|</span>-Cinefeel<span class="p">|</span>-SPiRiT<span class="p">|</span>-FC<span class="o">)</span>/i
+<span class="o">[</span><span class="m">125</span><span class="o">]</span>   /<span class="o">(</span>-JETIX<span class="p">|</span>-Coo7<span class="p">|</span>-WELP<span class="p">|</span>-KiMCHI<span class="p">|</span>-BLUTONiUM<span class="o">)</span>/i
+<span class="o">[</span><span class="m">125</span><span class="o">]</span>   /<span class="o">(</span>-orbitron<span class="p">|</span>-ETHiCS<span class="p">|</span>-RTFM<span class="p">|</span>-PSiG<span class="p">|</span>-MZABI<span class="o">)</span>/i
 <span class="o">[</span><span class="m">12</span><span class="o">]</span>   /<span class="o">(</span>repack3<span class="o">)</span>/i
 <span class="o">[</span><span class="m">11</span><span class="o">]</span>   /<span class="o">(</span>repack2<span class="o">)</span>/i
 <span class="o">[</span><span class="m">10</span><span class="o">]</span>   /<span class="o">(</span>repack<span class="p">|</span>proper<span class="o">)</span>/i
@@ -1450,6 +1424,31 @@ Probably doesn’t happen if cutoff is met, but for anything that is unmet or an
 <span class="o">[</span>-100<span class="o">]</span>  /<span class="o">(</span>TBS<span class="p">|</span>-BRiNK<span class="p">|</span>-CHX<span class="p">|</span>-XLF<span class="p">|</span>-worldmkv<span class="p">|</span>-GHOSTS<span class="o">)</span>/i
 <span class="o">[</span>-100<span class="o">]</span>  /<span class="o">(</span>-VIDEOHOLE<span class="o">)</span>/i
 </code></pre></div>
+<details class="info"><summary>Why the Must Not Contain entry</summary><p>So why did I put <code>/(?=(1080|720)).*((x|h)265|hevc)/i</code> as <code>Must Not Contain</code> and what does it do ?</p>
+<p>It blocks/ignores 720/1080p releases that are encoded in x265, why ?</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>x265 is good for for 4k stuff or 1080p if they used the the remuxes as source.
+If the media isn't source quality/remux, then there will be a loss of quality every time.
+Also, once you go x265, typically that file is done.
+It can't be changed to something else without a huge loss of quality.</p>
+<p>Something like 95% of video files are x264 and have much better direct play support.
+If you have more than a couple users,
+you will notice much more transcoding.
+Just depends on your priorities.</p>
+<p>So basically if you are storage poor and just need to save space, use x265.
+The catch is if you want best quality x265, you need source quality files, so you still have huge file sizes.
+If you want maximum compatibility and the option to change your files to something else later,
+then x264.
+It's all really dependent on specific situations for different people</p>
+</div>
+<p>It's a shame that most x265 groups microsize the releases or use the x264 as source what results in low quality releases. And the few groups that do use the correct source suffer from it.</p>
+<p>So I created my own golden rule.</p>
+<ul>
+<li>720/1080p =&gt; x264</li>
+<li>2160p/4k =&gt; x265</li>
+</ul>
+</details>
 <h3 id="optional-preferred-preferences">Optional preferred preferences<a class="headerlink" href="#optional-preferred-preferences" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Optional (use these only if you dislike renamed and retagged releases)</span>
 <span class="o">[</span>-25<span class="o">]</span>  /<span class="o">(</span><span class="se">\[</span>rartv<span class="se">\]</span><span class="p">|</span><span class="se">\[</span>eztv<span class="se">\]</span><span class="p">|</span><span class="se">\[</span>TGx<span class="se">\]</span><span class="o">)</span>/i
@@ -1465,31 +1464,31 @@ Probably doesn’t happen if cutoff is met, but for anything that is unmet or an
 <span class="o">[</span><span class="m">15</span><span class="o">]</span>   /<span class="se">\b</span>S<span class="se">\d</span>+<span class="se">\b</span><span class="o">(</span>?!E<span class="se">\d</span>+<span class="se">\b</span><span class="o">)</span>/i
 </code></pre></div>
 <h3 id="a-little-explanation-of-the-scores-and-why">A little explanation of the scores and why<a class="headerlink" href="#a-little-explanation-of-the-scores-and-why" title="Permanent link">&para;</a></h3>
-<p>Scores [75]-[100] Release Source.
-Scores [25]-[50] P2P Groups.
-Scores [10] Give a repack/proper a higher score but don't trump P2P groups for a Scene fix.</p>
-<p>Scores [-25] Retagged/Renames/Obfuscated  releases.</p>
+<ul>
+<li>Scores [75]-[100] Release Source.</li>
+<li>Scores [125]-[150] P2P Groups.</li>
+<li>Scores [10] Give a repack/proper a higher score but don't trump P2P groups for a Scene fix.</li>
+<li>Scores [-25] Retagged/Renames/Obfuscated  releases.</li>
+</ul>
 <div class="admonition danger">
 <p class="admonition-title">Watch out</p>
 <p>If you're getting often a error message like <code>Has the same filesize as existing file</code>, you might need to consider to remove the [-25]</p>
 </div>
-<p>Scores [-100] Groups that mess with the audio or add another preferred language.</p>
+<ul>
+<li>Scores [-100] Groups that mess with the audio or add another preferred language.</li>
+</ul>
 <p>Optional =&gt; We've tested it and it worked for what we've tested it on, if it will work in your situation we don't know if you notice something wrong just contact me and we will try to fix it or remove it.</p>
 <p>The reason why I got multiple entry's with the same score is because the line will go out of the box and I don't like how that looks.</p>
 <h2 id="final-results">Final Results<a class="headerlink" href="#final-results" title="Permanent link">&para;</a></h2>
 <p>When you've done it correctly it will look something like this.</p>
-<p><img alt="final" src="../images/final.png" /></p>
+<p><img alt="rp-groups" src="../images/rp-groups.png" /></p>
 <p>And after you clicked on <code>Save</code> it will look something like this:</p>
-<p><img alt="applied" src="../images/applied.png" /></p>
+<p><img alt="rp-profiles" src="../images/rp-profiles.png" /></p>
 <hr />
 <p>This list is made by collecting information from Sonarr Discord Channel, and personal testing and a few others that helped.</p>
 <p>So I want to thnx everyone who helped to make this list possible, for privacy reasons I decided not to add the names/nick of the persons.</p>
 <p>If you want to be mentioned please message me on discord, including a link for proof to what part you want to be credited.</p>
 <hr />
-<h3 id="why-not-x265">Why Not x265<a class="headerlink" href="#why-not-x265" title="Permanent link">&para;</a></h3>
-<p>Then the question why I put <code>/(x|h)\.?265/i</code> as <code>Must Not Contain</code>.
-Luckily someone else on Discord described it nice and correctly in my opinion.</p>
-<p><a href="https://trash-guides.info/Misc/x265-4k" target="_blank">LINK</a></p>
                 
                   
                     
@@ -1498,7 +1497,7 @@ Luckily someone else on Discord described it nice and correctly in my opinion.</
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-11-01T20:41:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-11-01</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-10T19:29:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-10</span>
     
   </small>
 </div>
