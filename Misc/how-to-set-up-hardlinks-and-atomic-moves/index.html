@@ -1944,7 +1944,7 @@
 </div>
 <h5 id="folder-structure">Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h5>
 <p>We're going to use a mounted drive that we're going to use as storage for downloads and your media.
-In this example the mounted drive will be mounted to <code>/mnt/</code> with the followig folder structure.</p>
+In this example the mounted drive will be mounted to <code>/mnt/</code> with the following folder structure.</p>
 <div class="highlight"><pre><span></span><code>storage
 ├── downloads
 |  ├── torrents
@@ -1961,7 +1961,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
    └── tv
 </code></pre></div>
 <h5 id="changes-to-the-env">Changes to the .env<a class="headerlink" href="#changes-to-the-env" title="Permanent link">&para;</a></h5>
-<p>To accomplisch this we need to change first a few paths in your <code>.env</code> (Usually <code>~/.docker/compose/.env</code>)</p>
+<p>To accomplish this we need to change first a few paths in your <code>.env</code> (Usually <code>~/.docker/compose/.env</code>)</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Global Settings</span>
 <span class="l l-Scalar l-Scalar-Plain">COMPOSE_HTTP_TIMEOUT=60</span>
 <span class="l l-Scalar l-Scalar-Plain">DOCKERCONFDIR=~/.config/appdata</span>
@@ -1999,18 +1999,18 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p>The screenshots in the examples are using the following root path <code>/storage</code></p>
 </div>
 <details class="example"><summary>Sonarr Examples</summary><h6>Sonarr</h6>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Importing</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Importing</code></p>
 <p><img alt="sonarr-enable-hardlinks" src="../images/sonarr-enable-hardlinks.png" /></p>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Root Folders</code></p>
 <p><img alt="ds-sonarr-root-folder" src="../images/ds-sonarr-root-folder.png" /></p>
 <p><code>Series</code> =&gt; <code>Add New</code></p>
 <p><img alt="ds-sonarr-add-new" src="../images/ds-sonarr-add-new.png" /></p>
 <p><img alt="ds-sonarr-tv" src="../images/ds-sonarr-tv.png" /></p>
 </details>
 <details class="example"><summary>Radarr Examples</summary><h6>Radarr</h6>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Importing</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Importing</code></p>
 <p><img alt="radarr-enable-hardlinks" src="../images/radarr-enable-hardlinks.png" /></p>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Root Folders</code></p>
 <p><img alt="ds-radarr-root-folder" src="../images/ds-radarr-root-folder.png" /></p>
 <p><code>Movies</code> =&gt; <code>Add New</code></p>
 <p><img alt="ds-radarr-add-new" src="../images/ds-radarr-add-new.png" /></p>
@@ -2132,7 +2132,7 @@ In this example the mounted drive will be mounted to <code>/mnt/</code> with the
 <p><code>Host Path:</code> =&gt; <code>/mnt/user/data/</code></p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Sonarr, Radarr and Lidarr get's access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
+<p>Sonarr, Radarr and Lidarr gets access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
 </div>
 <div class="highlight"><pre><span></span><code>data
 ├── torrents
@@ -2259,15 +2259,15 @@ this makes it easy to maintain and compare paths.</p>
 <li>PUID/PGID (this info you got earlier)</li>
 <li>TZ (Change to your timezone)</li>
 </ol>
-<div class="admonition importand">
-<p class="admonition-title">Importand</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>make sure you deleted/removed all your existing dockers from the GUI and also remove your native installs of these applications !!!</p>
 </div>
 <h5 id="run-the-docker-compose">Run the Docker Compose<a class="headerlink" href="#run-the-docker-compose" title="Permanent link">&para;</a></h5>
 <p>When you did all the above steps you only need to type the following in your <code>/volume1/docker/appdata</code></p>
 <div class="highlight"><pre><span></span><code>sudo docker-compose up -d
 </code></pre></div>
-<p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differene.</p>
+<p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differences.</p>
 <p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -2336,7 +2336,7 @@ this makes it easy to maintain and compare paths.</p>
 </code></pre></div>
 <h6>The arr(s)</h6>
 <p>Sonarr, Radarr and Lidarr</p>
-<p>Sonarr, Radarr and Lidarr get's access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
+<p>Sonarr, Radarr and Lidarr gets access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
 <div class="highlight"><pre><span></span><code>data
 ├── torrents
 │  ├── movies
@@ -2397,7 +2397,7 @@ this makes it easy to maintain and compare paths.</p>
 <h5 id="run-the-docker-compose_1">Run the Docker Compose<a class="headerlink" href="#run-the-docker-compose_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>sudo docker-compose up -d
 </code></pre></div>
-<p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differene.</p>
+<p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differences.</p>
 <p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2455,7 +2455,7 @@ this makes it easy to maintain and compare paths.</p>
 </code></pre></div>
 <h6>The arr(s)</h6>
 <p>Sonarr, Radarr and Lidarr</p>
-<p>Sonarr, Radarr and Lidarr get's access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
+<p>Sonarr, Radarr and Lidarr gets access to everything because the download folder(s) and media folder will look like and be one file system. Hard links will work and moves will be atomic, instead of copy + delete.</p>
 <div class="highlight"><pre><span></span><code>data
 ├── torrents
 │  ├── movies
@@ -2507,18 +2507,18 @@ sudo chmod -R <span class="nv">a</span><span class="o">=</span>,a+rX,u+w,g+w /da
 <li><a href="#rutorrent">ruTorrent</a></li>
 </ul>
 <details class="example"><summary>Sonarr Examples</summary><h4 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h4>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Importing</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Importing</code></p>
 <p><img alt="sonarr-enable-hardlinks" src="../images/sonarr-enable-hardlinks.png" /></p>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Root Folders</code></p>
 <p><img alt="sonarr-root-folder" src="../images/sonarr-root-folder.png" /></p>
 <p><code>Series</code> =&gt; <code>Add New</code></p>
 <p><img alt="sonarr-add-new" src="../images/sonarr-add-new.png" /></p>
 <p><img alt="sonarr-tv" src="../images/sonarr-tv.png" /></p>
 </details>
 <details class="example"><summary>Radarr Examples</summary><h4 id="radarr">Radarr<a class="headerlink" href="#radarr" title="Permanent link">&para;</a></h4>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Importing</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Importing</code></p>
 <p><img alt="radarr-enable-hardlinks" src="../images/radarr-enable-hardlinks.png" /></p>
-<p><code>Settings</code> =&gt; <code>Media Managemen</code> =&gt; <code>Root Folders</code></p>
+<p><code>Settings</code> =&gt; <code>Media Management</code> =&gt; <code>Root Folders</code></p>
 <p><img alt="radarr-root-folder" src="../images/radarr-root-folder.png" /></p>
 <p><code>Movies</code> =&gt; <code>Add New</code></p>
 <p><img alt="radarr-add-new" src="../images/radarr-add-new.png" /></p>
@@ -2562,7 +2562,7 @@ sudo chmod -R <span class="nv">a</span><span class="o">=</span>,a+rX,u+w,g+w /da
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-08T22:01:20+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-12T12:37:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-12</span>
     
   </small>
 </div>
