@@ -1310,6 +1310,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-the-docker-compose" class="md-nav__link">
     Run the Docker Compose
   </a>
@@ -1351,7 +1358,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#permissions" class="md-nav__link">
+  <a href="#permissions_1" class="md-nav__link">
     Permissions
   </a>
   
@@ -1399,7 +1406,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#permissions_1" class="md-nav__link">
+  <a href="#permissions_2" class="md-nav__link">
     Permissions
   </a>
   
@@ -1699,6 +1706,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-the-docker-compose" class="md-nav__link">
     Run the Docker Compose
   </a>
@@ -1740,7 +1754,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#permissions" class="md-nav__link">
+  <a href="#permissions_1" class="md-nav__link">
     Permissions
   </a>
   
@@ -1788,7 +1802,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#permissions_1" class="md-nav__link">
+  <a href="#permissions_2" class="md-nav__link">
     Permissions
   </a>
   
@@ -2256,13 +2270,18 @@ this makes it easy to maintain and compare paths.</p>
 <li>PUID/PGID (this info you got earlier)</li>
 <li>TZ (Change to your timezone)</li>
 </ol>
+<h5 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>sudo chown -R <span class="nv">$USER</span>:users /volume1/data /volume1/docker
+sudo chmod -R <span class="nv">a</span><span class="o">=</span>,a+rX,u+w,g+w /volume1/data /volume1/docker
+</code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>make sure you deleted/removed all your existing dockers from the GUI and also remove your native installs of these applications !!!</p>
 </div>
 <h5 id="run-the-docker-compose">Run the Docker Compose<a class="headerlink" href="#run-the-docker-compose" title="Permanent link">&para;</a></h5>
 <p>When you did all the above steps you only need to type the following in your <code>/volume1/docker/appdata</code></p>
-<div class="highlight"><pre><span></span><code>sudo docker-compose up -d
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /volume1/docker/appdata
+sudo docker-compose up -d
 </code></pre></div>
 <p>You will notice that all the images will be downloaded, and after that the containers will be started. If you get a error then look at the error what it says and try to fix it. If you still got issues then put your used docker-compose.yml on pastebin and join the guides-discord <a href="https://trash-guides.info/discord" target="_blank">here</a> and provide the pastebin link with the error, have patience because of timezone differences.</p>
 <p>Don't forget to look at the <a href="#examples">Examples</a> how to setup the paths inside the containers.</p>
@@ -2365,7 +2384,7 @@ this makes it easy to maintain and compare paths.</p>
 <p>Your appdata will be stored in <code>/docker/appdata/{appname}</code></p>
 <div class="highlight"><pre><span></span><code>sudo mkdir -p /docker/appdata
 </code></pre></div>
-<h5 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h5>
+<h5 id="permissions_1">Permissions<a class="headerlink" href="#permissions_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> /data /docker
 sudo chmod -R <span class="nv">a</span><span class="o">=</span>,a+rX,u+w,g+w /data /docker
 </code></pre></div>
@@ -2480,7 +2499,7 @@ this makes it easy to maintain and compare paths.</p>
 </code></pre></div>
 </details>
 <p><em>I'm using lower case on all folder on  purpose, being Linux is case sensitive.</em></p>
-<h5 id="permissions_1">Permissions<a class="headerlink" href="#permissions_1" title="Permanent link">&para;</a></h5>
+<h5 id="permissions_2">Permissions<a class="headerlink" href="#permissions_2" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> /data
 sudo chmod -R <span class="nv">a</span><span class="o">=</span>,a+rX,u+w,g+w /data
 </code></pre></div>
@@ -2559,7 +2578,7 @@ sudo chmod -R <span class="nv">a</span><span class="o">=</span>,a+rX,u+w,g+w /da
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-12T12:37:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-12</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2020-12-16T21:56:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2020-12-16</span>
     
   </small>
 </div>
